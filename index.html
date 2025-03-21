@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css">
+
+    <title>Vigilant BR | Gestor de riscos</title>
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+    
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="#" class="logo">
+        <i class="bx bx-shield-alt"></i>
+        <div class="logo-name"><span>Vigi</span>Lant</div>
+      </a>
+      <ul class="side-menu">
+        <li class="active">
+          <a href="#"><i class="bx bxs-dashboard"></i>Dashboard</a>
+        </li>
+        <li>
+          <a href="#"><i class="bx bx-shield-alt"></i>Riscos</a>
+        </li>
+        <li>
+          <a href="#"><i class="bx bx-wrench"></i>Equipamentos</a>
+        </li>
+        <li>
+          <a href="#"><i class="bx bx-file"></i>Relatórios</a>
+        </li>
+        <li>
+          <a href="#"><i class="bx bx-group"></i>Colaboradores</a>
+        </li>
+        <li>
+          <a href="#"><i class="bx bx-cog"></i>Configurações</a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bx-log-out-circle"></i>
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <nav>
+        <i class="bx bx-menu"></i>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button class="search-btn" type="submit">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="theme-toggle" hidden />
+        <label for="theme-toggle" class="theme-toggle"></label>
+        <a href="#" class="notif">
+          <i class="bx bx-bell"></i>
+          <span class="count">12</span>
+        </a>
+        <a href="#" class="profile">
+          <img src="/assets/beb449b8a5b8dd50c113fc3c4063e4e1.jpg" />
+        </a>
+      </nav>
+
+      <main>
+        <div class="header">
+          <div class="left">
+            <h1>Dashboard</h1>
+            <ul class="breadcrumb">
+              <li><a href="#">Analytics</a></li>
+              /
+              <li><a href="#" class="active">Riscos</a></li>
+            </ul>
+          </div>
+          <a href="#" class="report">
+            <i class="bx bx-cloud-download"></i>
+            <span>Download CSV</span>
+          </a>
+        </div>
+        <ul class="insights">
+          <li>
+            <i class="bx bx-shield-alt"></i>
+            <span class="info">
+              <h3>101</h3>
+              <p>Risco Identificado</p>
+            </span>
+          </li>
+          <li>
+            <i class="bx bx-wrench"></i>
+            <span class="info">
+              <h3>15</h3>
+              <p>Equipamentos check</p>
+            </span>
+          </li>
+          <li>
+            <i class="bx bx-x-circle"></i>
+            <span class="info">
+              <h3>99</h3>
+              <p>Análise de Perigos</p>
+            </span>
+          </li>
+          <li>
+            <i class="bx bx-file"></i>
+            <span class="info">
+              <h3>5</h3>
+              <p>Relatórios de Incidentes</p>
+            </span>
+          </li>
+        </ul>
+
+        <div class="bottom-data">
+          <div class="orders">
+            <div class="header">
+              <i class="bx bx-receipt"></i>
+              <h3>Recent Orders</h3>
+              <i class="bx bx-filter"></i>
+              <i class="bx bx-search"></i>
+            </div>
+            <table>
+              <div class="widget">
+                <div class="bar-chart">
+                    <div class="bar" style="height: 60%; background-color: #56CCF2;"></div>
+                    <div class="bar" style="height: 80%; background-color: #F2C94C;"></div>
+                    <div class="bar" style="height: 40%; background-color: #EB5757;"></div>
+                    <div class="bar" style="height: 70%; background-color: #27AE60;"></div>
+                    <div class="bar" style="height: 50%; background-color: #9B51E0;"></div>
+                    <div class="bar" style="height: 90%; background-color: #56CCF2;"></div>
+                    <div class="bar" style="height: 30%; background-color: #F2C94C;"></div>
+                </div>
+                <div class="chart-labels">
+                    <span>A</span>
+                    <span>B</span>
+                    <span>C</span>
+                    <span>D</span>
+                    <span>E</span>
+                    <span>F</span>
+                    <span>G</span>
+                </div>
+            </table>
+          </div>
+
+          <div class="reminders">
+            <div class="header">
+              <i class="bx bx-note"></i>
+              <h3>Remiders</h3>
+              <i class="bx bx-filter"></i>
+              <i class="bx bx-plus"></i>
+            </div>
+            <ul class="task-list">
+              <li class="completed">
+                <div class="task-title">
+                  <i class="bx bx-check-circle"></i>
+                  <p>Start Our Meeting</p>
+                </div>
+                <i class="bx bx-dots-vertical-rounded"></i>
+              </li>
+              <li class="completed">
+                <div class="task-title">
+                  <i class="bx bx-check-circle"></i>
+                  <p>Analyse Our Site</p>
+                </div>
+                <i class="bx bx-dots-vertical-rounded"></i>
+              </li>
+              <li class="not-completed">
+                <div class="task-title">
+                  <i class="bx bx-x-circle"></i>
+                  <p>Play Guitar</p>
+                </div>
+                <i class="bx bx-dots-vertical-rounded"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bottom-data">
+          <div class="orders">
+            <div class="header">
+              <i class="bx bx-receipt"></i>
+              <h3>Recent Orders</h3>
+              <i class="bx bx-filter"></i>
+              <i class="bx bx-search"></i>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Order Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="assets/profile.jpg" />
+                    <p>Letícia</p>
+                  </td>
+                  <td>14-08-2023</td>
+                  <td><span class="status completed">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="assets/profile.jpg" />
+                    <p>Letícia</p>
+                  </td>
+                  <td>14-08-2023</td>
+                  <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="assets/profile.jpg" />
+                    <p>Letícia</p>
+                  </td>
+                  <td>14-08-2023</td>
+                  <td><span class="status process">Processing</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bottom-data">
+            <div class="orders">
+              <div class="header">
+                <i class="bx bx-receipt"></i>
+                <h3>Recent Orders</h3>
+                <i class="bx bx-filter"></i>
+                <i class="bx bx-search"></i>
+              </div>
+              <table>
+                <div class="progress-bars">
+                  <div class="progress-item">
+                      <div class="progress-label">TOTAL SALES</div>
+                      <div class="progress-bar-container">
+                          <div class="progress-bar" style="width: 75%; background-color: #56CCF2;"></div>
+                      </div>
+                      <div class="progress-value">75%</div>
+                  </div>
+                  <div class="progress-item">
+                      <div class="progress-label">NEW CUSTOMERS</div>
+                      <div class="progress-bar-container">
+                          <div class="progress-bar" style="width: 50%; background-color: #F2C94C;"></div>
+                      </div>
+                      <div class="progress-value">50%</div>
+                  </div>
+                  <div class="progress-item">
+                      <div class="progress-label">COMPLETED TASKS</div>
+                      <div class="progress-bar-container">
+                          <div class="progress-bar" style="width: 90%; background-color: #27AE60;"></div>
+                      </div>
+                      <div class="progress-value">90%</div>
+                  </div>
+                  <div class="progress-item">
+                      <div class="progress-label">ACCURACY</div>
+                      <div class="progress-bar-container">
+                          <div class="progress-bar" style="width: 65%; background-color: #EB5757;"></div>
+                      </div>
+                      <div class="progress-value">65%</div>
+                  </div>
+              </table>
+            </div>
+
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
