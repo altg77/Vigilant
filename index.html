@@ -28,10 +28,10 @@
       </a>
       <ul class="side-menu">
         <li class="active">
-          <a href="#"><i class="bx bxs-dashboard"></i>Dashboard</a>
+          <a href="/index.html"><i class="bx bxs-dashboard"></i>Dashboard</a>
         </li>
         <li>
-          <a href="#"><i class="bx bx-shield-alt"></i>Riscos</a>
+          <a href="/paginas/riscos.html"><i class="bx bx-shield-alt"></i>Riscos</a>
         </li>
         <li>
           <a href="#"><i class="bx bx-wrench"></i>Equipamentos</a>
@@ -82,7 +82,7 @@
           <div class="left">
             <h1>Dashboard</h1>
             <ul class="breadcrumb">
-              <li><a href="#">Analytics</a></li>
+              <li><a href="#">Analisados</a></li>
               /
               <li><a href="#" class="active">Riscos</a></li>
             </ul>
@@ -275,6 +275,67 @@
 
       </main>
     </div>
-    <script src="script.js"></script>
+    <script>const sideLinks = document.querySelectorAll(
+      ".sidebar .side-menu li a:not(.logout)"
+    );
+    
+    sideLinks.forEach((item) => {
+      const li = item.parentElement;
+      item.addEventListener("click", () => {
+        sideLinks.forEach((i) => {
+          i.parentElement.classList.remove("active");
+        });
+        li.classList.add("active");
+      });
+    });
+    
+    const menuBar = document.querySelector(".content nav .bx.bx-menu");
+    const sideBar = document.querySelector(".sidebar");
+    
+    menuBar.addEventListener("click", () => {
+      sideBar.classList.toggle("close");
+    });
+    
+    const searchBtn = document.querySelector(
+      ".content nav form .form-input button"
+    );
+    const searchBtnIcon = document.querySelector(
+      ".content nav form .form-input button .bx"
+    );
+    const searchForm = document.querySelector(".content nav form");
+    
+    searchBtn.addEventListener("click", function (e) {
+      if (window.innerWidth < 576) {
+        e.preventDefault;
+        searchForm.classList.toggle("show");
+        if (searchForm.classList.contains("show")) {
+          searchBtnIcon.classList.replace("bx-search", "bx-x");
+        } else {
+          searchBtnIcon.classList.replace("bx-x", "bx-search");
+        }
+      }
+    });
+    
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 768) {
+        sideBar.classList.add("close");
+      } else {
+        sideBar.classList.remove("close");
+      }
+    
+      if (window.innerWidth > 576) {
+        searchBtnIcon.classList.replace("bx-x", "bx-search");
+        searchForm.classList.remove("show");
+      }
+    });
+    
+    const toggler = document.getElementById("theme-toggle");
+    
+    toggler.addEventListener("change", function () {
+      this.checked
+        ? document.body.classList.add("dark")
+        : document.body.classList.remove("dark");
+    });
+    </script>
   </body>
 </html>
