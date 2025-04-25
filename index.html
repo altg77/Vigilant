@@ -21,6 +21,17 @@
     
   </head>
   <body>
+    <div id="overlay" class="overlay">
+      <div id="overlay-content" class="overlay-content">
+        <div class="header">
+          <h3>Detalhes do Risco</h3>
+          <i class="bx bx-x overlay-close"></i>
+        </div>
+        <div id="risk-details">
+          </div>
+      </div>
+    </div>
+
     <div class="sidebar">
       <a href="#" class="logo">
         <i class="bx bx-shield-alt"></i>
@@ -31,16 +42,19 @@
           <a href="/index.html"><i class="bx bxs-dashboard"></i>Dashboard</a>
         </li>
         <li>
-          <a href="/paginas/riscos.html"><i class="bx bx-shield-alt"></i>Riscos</a>
+          <a href="/paginas/equipamentos.html"><i class="bx bx-shield-alt"></i>Máquinas</a>
         </li>
         <li>
-          <a href="#"><i class="bx bx-wrench"></i>Equipamentos</a>
+          <a href="/paginas/riscos.html"><i class="bx bx-wrench"></i>Riscos</a>
         </li>
         <li>
-          <a href="#"><i class="bx bx-file"></i>Relatórios</a>
+          <a href="/paginas/planodeacao.html"><i class="bx bx-task"></i>Planos de Ação</a>
         </li>
         <li>
-          <a href="#"><i class="bx bx-group"></i>Colaboradores</a>
+          <a href="/paginas/relatorios.html"><i class="bx bx-file"></i>Relatórios</a>
+        </li>
+        <li>
+          <a href="/paginas/Colaboradores.html"><i class="bx bx-group"></i>Colaboradores</a>
         </li>
         <li>
           <a href="#"><i class="bx bx-cog"></i>Configurações</a>
@@ -55,6 +69,7 @@
         </li>
       </ul>
     </div>
+
     <div class="content">
       <nav>
         <i class="bx bx-menu"></i>
@@ -81,44 +96,35 @@
         <div class="header">
           <div class="left">
             <h1>Dashboard</h1>
-            <ul class="breadcrumb">
-              <li><a href="#">Analisados</a></li>
-              /
-              <li><a href="#" class="active">Riscos</a></li>
-            </ul>
           </div>
-          <a href="#" class="report">
-            <i class="bx bx-cloud-download"></i>
-            <span>Download CSV</span>
-          </a>
         </div>
         <ul class="insights">
           <li>
             <i class="bx bx-shield-alt"></i>
             <span class="info">
-              <h3>101</h3>
-              <p>Risco Identificado</p>
+              <h3 data-link="/paginas/riscos.html">101</h3>
+              <p>Riscos Identificados</p>
             </span>
           </li>
           <li>
             <i class="bx bx-wrench"></i>
             <span class="info">
-              <h3>15</h3>
-              <p>Equipamentos check</p>
+              <h3 data-link="/paginas/equipamentos.html">15</h3>
+              <p>Equipamentos Ativos</p>
             </span>
           </li>
           <li>
             <i class="bx bx-x-circle"></i>
             <span class="info">
-              <h3>99</h3>
-              <p>Análise de Perigos</p>
+              <h3 data-link="/paginas/subpaginas/analiserisco.html">99</h3>
+              <p>Analise de Riscos indentificada</p>
             </span>
           </li>
           <li>
             <i class="bx bx-file"></i>
             <span class="info">
-              <h3>5</h3>
-              <p>Relatórios de Incidentes</p>
+              <h3 data-link="/paginas/planodeacao.html">5</h3>
+              <p>Soluções</p>
             </span>
           </li>
         </ul>
@@ -127,7 +133,7 @@
           <div class="orders">
             <div class="header">
               <i class="bx bx-receipt"></i>
-              <h3>Taxa de Riscos do ano</h3>
+              <h3>Riscos no ano</h3>
               <i class="bx bx-filter"></i>
               <i class="bx bx-search"></i>
             </div>
@@ -157,30 +163,34 @@
           <div class="reminders">
             <div class="header">
               <i class="bx bx-note"></i>
-              <h3>Analise e Soluçaõ urgente</h3>
+              <h3 style="cursor: pointer;" data-link="/paginas/planodeacao.html">Analise e Soluçaõ urgente</h3>
               <i class="bx bx-filter"></i>
               <i class="bx bx-plus"></i>
             </div>
             <ul class="task-list">
+
               <li class="completed">
                 <div class="task-title">
                   <i class="bx bx-check-circle"></i>
-                  <p>Afaste-se de áreas de risco imediato</p>
+                  <p>Parada imediata da máquina para inspeção (RIS-EST-002)</p>
                 </div>
                 <i class="bx bx-dots-vertical-rounded"></i>
               </li>
+
               <li class="completed">
                 <div class="task-title">
                   <i class="bx bx-check-circle"></i>
-                  <p>Ligue para os serviços de emergência</p>
+                  <p>Ajuste dos parâmetros de corte(RIS-PIN-003)</p>
                 </div>
                 <i class="bx bx-dots-vertical-rounded"></i>
               </li>
+
               <li class="not-completed">
                 <div class="task-title">
                   <i class="bx bx-x-circle"></i>
-                  <p>Isole a área para evitar a propagação do vazamento.</p>
+                  <p>manutenção para avaliação detalhada(RIS-PIN-005).</p>
                 </div>
+                
                 <i class="bx bx-dots-vertical-rounded"></i>
               </li>
             </ul>
@@ -191,7 +201,7 @@
           <div class="orders">
             <div class="header">
               <i class="bx bx-receipt"></i>
-              <h3>Riscos Recentes</h3>
+              <h3 style="cursor: pointer;" data-link="/paginas/planodeacao.html">Riscos Recentes</h3>
               <i class="bx bx-filter"></i>
               <i class="bx bx-search"></i>
             </div>
@@ -199,35 +209,59 @@
               <thead>
                 <tr>
                   <th>Setores</th>
-                  <th>Ordem de data</th>
-                  <th>Status</th>
+                    <th>Código</th>
+                    <th>Máquina Associada</th>
+                    <th>Descrição do risco</th>
+                    <th>Nivel de criticidade</th>
+                    <th>Data de indentificação</th>
+                    <th>Status</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>
-                    <img src="/assets/images (35).jpg" />
-                    <p>Setor 17</p>
+                      <img src="/assets/images (35).jpg" />
+                      <p>Setor 03</p>
                   </td>
-                  <td>14-08-2023</td>
-                  <td><span class="status completed">Fora de risco</span></td>
-                </tr>
-                <tr>
+                  <td>RIS-EST-002</td>
                   <td>
-                    <img src="/assets/images (35).jpg" />
-                    <p>Seto 2</p>
+                      <p>FAB-EST-005</p>
                   </td>
-                  <td>14-08-2023</td>
-                  <td><span class="status pending">Extra risco</span></td>
-                </tr>
-                <tr>
+                  <td>Quebra de ferram...</td>
+                  <td><span class="status completed">Alto</span></td>
+                  <td>2025-04-01</td>
+                  <td><span class="status pending">Em analise</span></td>
+              </tr>
+              <tr>
                   <td>
-                    <img src="/assets/images (35).jpg" />
-                    <p>Central</p>
+                      <img src="/assets/images (35).jpg" />
+                      <p>Setor 21</p>
                   </td>
-                  <td>14-08-2023</td>
-                  <td><span class="status process">Em risco</span></td>
-                </tr>
+                  <td>RIS-PIN-003</td>
+                  <td>
+                      <p>FAB-PIN-012</p>
+                  </td>
+                  <td>Entupimento de bic...</td>
+                  <td><span class="status completed">Alto</span></td>
+                  <td>2025-04-10</td>
+                  <td><span class="status pending">Em analise</span></td>
+
+              </tr>
+              <tr>
+                  <td>
+                      <img src="/assets/images (35).jpg" />
+                      <p>Setor 09</p>
+                  </td>
+                  <td>RIS-USI-004</td>
+                  <td>
+                      <p>FAB-USI-021</p>
+                  </td>
+                  <td>Descalibração do cent...</td>
+                  <td><span class="status pending">Médio</span></td>
+                  <td>2025-04-18</td>
+                  <td><span class="status pending">Em analise</span></td>
+
+              </tr>
               </tbody>
             </table>
           </div>
@@ -236,40 +270,26 @@
             <div class="orders">
               <div class="header">
                 <i class="bx bx-receipt"></i>
-                <h3>% de ocorrer acidente</h3>
+                <h3 style="cursor: pointer;" data-link="/paginas/subpaginas/analiserisco.html">Taxa de Risco</h3>
                 <i class="bx bx-filter"></i>
                 <i class="bx bx-search"></i>
               </div>
               <table>
                 <div class="progress-bars">
                   <div class="progress-item">
-                      <div class="progress-label">Maquina de produção 1</div>
+                      <div class="progress-label">Prensa Hidráulica HP-150T (FAB-EST-005)</div>
                       <div class="progress-bar-container">
-                          <div class="progress-bar" style="width: 75%; background-color: #56CCF2;"></div>
+                          <div class="progress-bar" style="width: 70%; background-color: #f30000;"></div>
                       </div>
                       <div class="progress-value">75%</div>
                   </div>
                   <div class="progress-item">
-                      <div class="progress-label">Maquina de produção 2</div>
+                      <div class="progress-label">Linha de Pintura Automática LPA-5 (FAB-PIN-012)</div>
                       <div class="progress-bar-container">
                           <div class="progress-bar" style="width: 50%; background-color: #F2C94C;"></div>
                       </div>
                       <div class="progress-value">50%</div>
-                  </div>
-                  <div class="progress-item">
-                      <div class="progress-label">Maquina de produção 3</div>
-                      <div class="progress-bar-container">
-                          <div class="progress-bar" style="width: 90%; background-color: #27AE60;"></div>
-                      </div>
-                      <div class="progress-value">90%</div>
-                  </div>
-                  <div class="progress-item">
-                      <div class="progress-label">Maquina de produção 4</div>
-                      <div class="progress-bar-container">
-                          <div class="progress-bar" style="width: 65%; background-color: #EB5757;"></div>
-                      </div>
-                      <div class="progress-value">65%</div>
-                  </div>
+                    </div>
               </table>
             </div>
 
@@ -337,5 +357,7 @@
         : document.body.classList.remove("dark");
     });
     </script>
+    <script src="/js/detalhes.js"></script>
+    <script src="/js/linkredirecion.js"></script>
   </body>
 </html>

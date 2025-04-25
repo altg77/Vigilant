@@ -25,7 +25,7 @@
     <div id="overlay" class="overlay">
       <div id="overlay-content" class="overlay-content">
         <div class="header">
-          <h3>Detalhes do Risco</h3>
+          <h3>Detalhes das Máquinas</h3>
           <i class="bx bx-x overlay-close"></i>
         </div>
         <div id="risk-details">
@@ -42,10 +42,10 @@
         <li>
           <a href="/index.html"><i class="bx bxs-dashboard"></i>Dashboard</a>
         </li>
-        <li>
+        <li class="active">
           <a href="/paginas/equipamentos.html"><i class="bx bx-shield-alt"></i>Máquinas</a>
         </li>
-        <li  class="active">
+        <li>
           <a href="/paginas/riscos.html"><i class="bx bx-wrench"></i>Riscos</a>
         </li>
         <li>
@@ -70,7 +70,6 @@
         </li>
       </ul>
     </div>
-
 
     <div class="content">
       <nav>
@@ -97,21 +96,17 @@
       <main>
         <div class="header">
           <div class="left">
-            <h1>Riscos</h1>
+            <h1>Máquinas</h1>
             <ul class="breadcrumb">
-              <li><a href="#">Registro de riscos</a></li>
+              <li><a href="#">Registro de equipamentos</a></li>
             </ul>
           </div>
           <div class="tt">
             <a href="#" class="report">
-              <span>Adicionar manualmente</span>
-            </a>
-            <a href="/paginas/subpaginas/analiserisco.html" class="warning">
-              <span>Analise IA de possiveis riscos</span>
+              <span>Vincular Equipamentos</span>
             </a>
           </div>
         </div>
-
         <div class="bottom-data">
             <div class="orders">
               <div class="header">
@@ -121,91 +116,62 @@
               <table>
                 <thead>
                   <tr>
-                    <th>Setores</th>
+                    <th>Equipamentos</th>
                     <th>Código</th>
-                    <th>Máquina Associada</th>
-                    <th>Descrição do risco</th>
-                    <th>Nivel de criticidade</th>
-                    <th>Data de indentificação</th>
+                    <th>Modelo</th>
+                    <th>Setor</th>
                     <th>Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 03</p>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaPiHmmXC5ipmORBrER-lYJSTJxljybv-rLA&s" />
+                      <p>Robô de Solda RB-2000</p>
                     </td>
-                    <td>RIS-EST-002</td>
-                    <td>
-                        <p>FAB-EST-005</p>
-                    </td>
-                    <td>Quebra de ferram...</td>
-                    <td><span class="status completed">Alto</span></td>
-                    <td>2025-04-01</td>
-                    <td><span class="status pending">Em analise</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 21</p>
-                    </td>
-                    <td>RIS-PIN-003</td>
-                    <td>
-                        <p>FAB-PIN-012</p>
-                    </td>
-                    <td>Entupimento de bic...</td>
-                    <td><span class="status completed">Alto</span></td>
-                    <td>2025-04-10</td>
-                    <td><span class="status pending">Em analise</span></td>
+                    <td>FAB-SOL-001</td>
+                    <td>ArcTech X</td>
 
-                </tr>
-                <tr>
                     <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 09</p>
+                      <p>Funilaria (Body Shop)</p>
                     </td>
-                    <td>RIS-USI-004</td>
-                    <td>
-                        <p>FAB-USI-021</p>
-                    </td>
-                    <td>Descalibração do cent...</td>
-                    <td><span class="status pending">Médio</span></td>
-                    <td>2025-04-18</td>
-                    <td><span class="status pending">Em analise</span></td>
+                    
+                    <td><span class="status completed">Operacional</span></td>
 
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 12</p>
-                    </td>
-                    <td>RIS-MON-005</td>
-                    <td>
-                        <p>FAB-MON-035</p>
-                    </td>
-                    <td>Desalinhamento do tran...</td>
-                    <td><span class="status pending">Baixo</span></td>
-                    <td>2025-04-22</td>
-                    <td><span class="status pending">Em analise</span></td>
+                  </tr>
 
-                </tr>
-                <tr>
+                  <tr> <tr>
                     <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 12</p>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaPiHmmXC5ipmORBrER-lYJSTJxljybv-rLA&s" />
+                      <p>Prensa Hidráulica HP-150T</p>
                     </td>
-                    <td>RIS-MON-006</td>
+                    <td>FAB-EST-035</td>
+                    <td>PowerPress 150</td>
+
                     <td>
-                        <p>FAB-MON-038</p>
+                      <p>Estamparia (Stamping)</p>
                     </td>
-                    <td>Falha no sen...</td>
-                    <td><span class="status pending">Médio</span></td>
-                    <td>2025-04-23</td>
-                    <td><span class="status pending">Em analise</span></td>
+                    
+                    <td><span class="status completed">Operacional</span></td>
 
-                </tr>
+                  </tr>
 
+                    <tr>
+                    <td>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaPiHmmXC5ipmORBrER-lYJSTJxljybv-rLA&s" />
+                      <p>Linha de Pintura Automática LPA-5</p>
+                    </td>
+                    <td>FAB-PIN-012</td>
+                    <td>ColorFlow 5.0</td>
+
+                    <td>
+                      <p>Pintura (Paint Shop)</p>
+                    </td>
+                    
+                    <td><span class="status completed">Em Manutenção</span></td>
+
+                  </tr>
+                  
                 </tbody>
               </table>
             </div>
@@ -276,7 +242,6 @@
       });
       </script>
           <script src="/js/detalhes.js"></script>
-
 
   </body>
 </html>

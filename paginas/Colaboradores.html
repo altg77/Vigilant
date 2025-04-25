@@ -25,7 +25,7 @@
     <div id="overlay" class="overlay">
       <div id="overlay-content" class="overlay-content">
         <div class="header">
-          <h3>Detalhes do Risco</h3>
+          <h3>Detalhes do Colaborador</h3>
           <i class="bx bx-x overlay-close"></i>
         </div>
         <div id="risk-details">
@@ -45,7 +45,7 @@
         <li>
           <a href="/paginas/equipamentos.html"><i class="bx bx-shield-alt"></i>Máquinas</a>
         </li>
-        <li  class="active">
+        <li>
           <a href="/paginas/riscos.html"><i class="bx bx-wrench"></i>Riscos</a>
         </li>
         <li>
@@ -54,7 +54,7 @@
         <li>
           <a href="/paginas/relatorios.html"><i class="bx bx-file"></i>Relatórios</a>
         </li>
-        <li>
+        <li   class="active">
           <a href="/paginas/Colaboradores.html"><i class="bx bx-group"></i>Colaboradores</a>
         </li>
         <li>
@@ -70,7 +70,6 @@
         </li>
       </ul>
     </div>
-
 
     <div class="content">
       <nav>
@@ -97,21 +96,18 @@
       <main>
         <div class="header">
           <div class="left">
-            <h1>Riscos</h1>
+            <h1>Colaboradores</h1>
             <ul class="breadcrumb">
-              <li><a href="#">Registro de riscos</a></li>
+              <li><a href="#">Agentes</a></li>
             </ul>
           </div>
           <div class="tt">
             <a href="#" class="report">
-              <span>Adicionar manualmente</span>
-            </a>
-            <a href="/paginas/subpaginas/analiserisco.html" class="warning">
-              <span>Analise IA de possiveis riscos</span>
+              <i class="bx bx-cloud-download"></i>
+              <span>Adicionar colaborador</span>
             </a>
           </div>
         </div>
-
         <div class="bottom-data">
             <div class="orders">
               <div class="header">
@@ -121,91 +117,68 @@
               <table>
                 <thead>
                   <tr>
-                    <th>Setores</th>
-                    <th>Código</th>
-                    <th>Máquina Associada</th>
-                    <th>Descrição do risco</th>
-                    <th>Nivel de criticidade</th>
-                    <th>Data de indentificação</th>
-                    <th>Status</th>
+                    <th>Nome</th>
+                    <th>Contato</th>
+                    <th>Cargo</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 03</p>
+                      <img src="https://cdn.pixabay.com/photo/2017/04/04/17/55/people-2202472_1280.jpg" />
+                      <p>Pedro</p>
                     </td>
-                    <td>RIS-EST-002</td>
+                    <td>(96) 3468-7432</td>
+                    <td><span class="status completed">Programador</span></td>
+                  </tr>
+                  <tr>
                     <td>
-                        <p>FAB-EST-005</p>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmnFIMPhZ83RzSLPa0bkIu65xPUmBDMlgDUg&s" />
+                      <p>Jõao</p>
                     </td>
-                    <td>Quebra de ferram...</td>
-                    <td><span class="status completed">Alto</span></td>
-                    <td>2025-04-01</td>
-                    <td><span class="status pending">Em analise</span></td>
-                </tr>
-                <tr>
+                    <td>(82) 2334-3922</td>
+                    <td><span class="status process">Encarregador</span></td>
+                  </tr>
+                  <tr>
                     <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 21</p>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmv2kkIx5gTxdG4jVx-PcQ7zPv0rxZW6-Rkw&s" />
+                      <p>Ana</p>
                     </td>
-                    <td>RIS-PIN-003</td>
+                    <td>(96) 3787-8273</td>
+                    <td><span class="status process">Analista</span></td>
+                  </tr>
+                  <tr>
                     <td>
-                        <p>FAB-PIN-012</p>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBCylWI6wTBLJ8aR3RDVGi6TA4MPtgPjFqag&s" />
+                      <p>Henrique</p>
                     </td>
-                    <td>Entupimento de bic...</td>
-                    <td><span class="status completed">Alto</span></td>
-                    <td>2025-04-10</td>
-                    <td><span class="status pending">Em analise</span></td>
-
-                </tr>
-                <tr>
+                    <td>(64) 3787-8423</td>
+                    <td><span class="status process">Programador</span></td>
+                  </tr>
+                  <tr>
                     <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 09</p>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP9MAhnhnMtwzAs2FN-P5Xr2nhbeNFj9X96g&s" />
+                      <p>Fernanda</p>
                     </td>
-                    <td>RIS-USI-004</td>
+                    <td>(69) 2822-8372</td>
+                    <td><span class="status pending">Gerente</span></td>
+                  </tr>
+                  <tr>
                     <td>
-                        <p>FAB-USI-021</p>
+                      <img src="https://i.pinimg.com/236x/e9/17/e7/e917e7d0da271a3bab6afefcb1865e5d.jpg" />
+                      <p>Marcos</p>
                     </td>
-                    <td>Descalibração do cent...</td>
-                    <td><span class="status pending">Médio</span></td>
-                    <td>2025-04-18</td>
-                    <td><span class="status pending">Em analise</span></td>
-
-                </tr>
-                <tr>
+                    <td>(61) 2622-1485</td>
+                    <td><span class="status process">Tecnico</span></td>
+                  </tr>
+                  <tr>
                     <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 12</p>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfolZBMiL1Rpub-6PPv-fhiP7Gp2CoOf6t3w&s" />
+                      <p>Cleiton</p>
                     </td>
-                    <td>RIS-MON-005</td>
-                    <td>
-                        <p>FAB-MON-035</p>
-                    </td>
-                    <td>Desalinhamento do tran...</td>
-                    <td><span class="status pending">Baixo</span></td>
-                    <td>2025-04-22</td>
-                    <td><span class="status pending">Em analise</span></td>
-
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 12</p>
-                    </td>
-                    <td>RIS-MON-006</td>
-                    <td>
-                        <p>FAB-MON-038</p>
-                    </td>
-                    <td>Falha no sen...</td>
-                    <td><span class="status pending">Médio</span></td>
-                    <td>2025-04-23</td>
-                    <td><span class="status pending">Em analise</span></td>
-
-                </tr>
-
+                    <td>(84) 2530-8687</td>
+                    <td><span class="status process">Tecnico</span></td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -275,8 +248,7 @@
           : document.body.classList.remove("dark");
       });
       </script>
-          <script src="/js/detalhes.js"></script>
-
+                <script src="/js/detalhes.js"></script>
 
   </body>
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Ação - Análise e Solução de Riscos</title>
+    <link rel="stylesheet" href="tt.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Plano de Ação - Análise e Solução de Riscos</h1>
+
+        <div class="risco-item">
+            <h2>Risco Identificado: Falha Crítica no Módulo de Autenticação</h2>
+            <p><strong>Análise da IA:</strong> Vulnerabilidade detectada devido à falta de validação robusta nas entradas do usuário.</p>
+            <p><strong>Solução Proposta pela IA:</strong> Implementar uma função de sanitização de dados e utilizar bibliotecas de criptografia seguras para as senhas.</p>
+            <div class="acoes">
+                <h3>Ações a serem tomadas:</h3>
+                <ul>
+                    <li><input type="checkbox"> Desenvolver e testar a função de sanitização de dados.</li>
+                    <li><input type="checkbox"> Integrar uma biblioteca de criptografia robusta (ex: bcrypt).</li>
+                    <li><input type="checkbox"> Refatorar o código de autenticação para utilizar as novas implementações.</li>
+                    <li><input type="checkbox"> Realizar testes de segurança (pentest) no módulo de autenticação.</li>
+                </ul>
+            </div>
+            <div class="status">
+                <strong>Status:</strong> <span class="pendente">Pendente</span>
+            </div>
+            <div class="responsavel">
+                <strong>Responsável:</strong> Equipe de Desenvolvimento
+            </div>
+            <div class="prazo">
+                <strong>Prazo:</strong> 28/04/2025
+            </div>
+        </div>
+
+        <div class="risco-item">
+            <h2>Risco Identificado: Lentidão no Processamento de Dados</h2>
+            <p><strong>Análise da IA:</strong> Gargalo identificado na consulta ao banco de dados para relatórios complexos.</p>
+            <p><strong>Solução Proposta pela IA:</strong> Otimizar as queries SQL, criar índices nas colunas frequentemente consultadas e considerar o uso de um sistema de cache.</p>
+            <div class="acoes">
+                <h3>Ações a serem tomadas:</h3>
+                <ul>
+                    <li><input type="checkbox"> Analisar e otimizar as queries SQL identificadas.</li>
+                    <li><input type="checkbox"> Criar índices apropriados no banco de dados.</li>
+                    <li><input type="checkbox"> Avaliar e implementar um sistema de cache (ex: Redis).</li>
+                    <li><input type="checkbox"> Monitorar o desempenho do processamento de dados após as otimizações.</li>
+                </ul>
+            </div>
+            <div class="status">
+                <strong>Status:</strong> <span class="em-andamento">Em Andamento</span>
+            </div>
+            <div class="responsavel">
+                <strong>Responsável:</strong> Analista de Banco de Dados
+            </div>
+            <div class="prazo">
+                <strong>Prazo:</strong> 05/05/2025
+            </div>
+        </div>
+
+        </div>
+</body>
+</html>

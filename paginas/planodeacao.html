@@ -25,14 +25,14 @@
     <div id="overlay" class="overlay">
       <div id="overlay-content" class="overlay-content">
         <div class="header">
-          <h3>Detalhes do Risco</h3>
+          <h3>Detalhes do Plano de ação</h3>
           <i class="bx bx-x overlay-close"></i>
         </div>
         <div id="risk-details">
           </div>
       </div>
     </div>
-    
+   
     <div class="sidebar">
       <a href="#" class="logo">
         <i class="bx bx-shield-alt"></i>
@@ -45,10 +45,10 @@
         <li>
           <a href="/paginas/equipamentos.html"><i class="bx bx-shield-alt"></i>Máquinas</a>
         </li>
-        <li  class="active">
+        <li>
           <a href="/paginas/riscos.html"><i class="bx bx-wrench"></i>Riscos</a>
         </li>
-        <li>
+        <li class="active">
           <a href="/paginas/planodeacao.html"><i class="bx bx-task"></i>Planos de Ação</a>
         </li>
         <li>
@@ -70,7 +70,6 @@
         </li>
       </ul>
     </div>
-
 
     <div class="content">
       <nav>
@@ -97,21 +96,13 @@
       <main>
         <div class="header">
           <div class="left">
-            <h1>Riscos</h1>
+            <h1>Plano de Ação</h1>
             <ul class="breadcrumb">
-              <li><a href="#">Registro de riscos</a></li>
+              <li><a href="#">Solução para os riscos apresentados</a></li>
             </ul>
           </div>
-          <div class="tt">
-            <a href="#" class="report">
-              <span>Adicionar manualmente</span>
-            </a>
-            <a href="/paginas/subpaginas/analiserisco.html" class="warning">
-              <span>Analise IA de possiveis riscos</span>
-            </a>
-          </div>
+  
         </div>
-
         <div class="bottom-data">
             <div class="orders">
               <div class="header">
@@ -121,92 +112,52 @@
               <table>
                 <thead>
                   <tr>
-                    <th>Setores</th>
+                    <th>Solução gerada</th>
                     <th>Código</th>
-                    <th>Máquina Associada</th>
-                    <th>Descrição do risco</th>
-                    <th>Nivel de criticidade</th>
-                    <th>Data de indentificação</th>
+                    <th>Tempo da Solução</th>
+                    <th>Risco</th>
                     <th>Status</th>
+                    <th>Responsaveis</th>
+                    <th>Prazo</th>
                   </tr>
                 </thead>
                 <tbody>
+
                   <tr>
                     <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 03</p>
+                      <p>Parada imediata da máquina para inspeção</p>
                     </td>
+                    <td>FW-2025-01</td>
+                    <td>12 min</td>
                     <td>RIS-EST-002</td>
+                    <td><span class="status completed">Em análise</span></td>
+                    <td>Analista</td>
+                    <td><span class="status completed">Imediato</span></td>
+                  </tr>
+
+                  <tr>
                     <td>
-                        <p>FAB-EST-005</p>
+                        <p>Ajuste dos parâmetros de corte</p>
                     </td>
-                    <td>Quebra de ferram...</td>
-                    <td><span class="status completed">Alto</span></td>
-                    <td>2025-04-01</td>
-                    <td><span class="status pending">Em analise</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 21</p>
-                    </td>
+                    <td>AJUSTE-CORTE-01</td>
+                    <td>10 min</td>
                     <td>RIS-PIN-003</td>
-                    <td>
-                        <p>FAB-PIN-012</p>
-                    </td>
-                    <td>Entupimento de bic...</td>
-                    <td><span class="status completed">Alto</span></td>
-                    <td>2025-04-10</td>
-                    <td><span class="status pending">Em analise</span></td>
-
+                    <td><span class="status completed">Concluído</span></td>
+                    <td>Analista</td>
+                    <td><span class="status completed">Aguardando</span></td>
                 </tr>
+
                 <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 09</p>
-                    </td>
-                    <td>RIS-USI-004</td>
-                    <td>
-                        <p>FAB-USI-021</p>
-                    </td>
-                    <td>Descalibração do cent...</td>
-                    <td><span class="status pending">Médio</span></td>
-                    <td>2025-04-18</td>
-                    <td><span class="status pending">Em analise</span></td>
-
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 12</p>
-                    </td>
-                    <td>RIS-MON-005</td>
-                    <td>
-                        <p>FAB-MON-035</p>
-                    </td>
-                    <td>Desalinhamento do tran...</td>
-                    <td><span class="status pending">Baixo</span></td>
-                    <td>2025-04-22</td>
-                    <td><span class="status pending">Em analise</span></td>
-
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 12</p>
-                    </td>
-                    <td>RIS-MON-006</td>
-                    <td>
-                        <p>FAB-MON-038</p>
-                    </td>
-                    <td>Falha no sen...</td>
-                    <td><span class="status pending">Médio</span></td>
-                    <td>2025-04-23</td>
-                    <td><span class="status pending">Em analise</span></td>
-
-                </tr>
-
-                </tbody>
+                  <td>
+                      <p>manutenção para avaliação detalhada</p>
+                  </td>
+                  <td>CHAMADO-MANUT-01</td>
+                  <td>5 min</td>
+                  <td>RIS-PIN-005</td>
+                  <td><span class="status in-progress">Aguardando</span></td>
+                  <td>Operador</td>
+                  <td><span class="status completed">Aguardando</span></td>
+              </tr>
               </table>
             </div>
             </div>
@@ -275,8 +226,6 @@
           : document.body.classList.remove("dark");
       });
       </script>
-          <script src="/js/detalhes.js"></script>
-
-
+                <script src="/js/detalhes.js"></script>
   </body>
 </html>

@@ -1,0 +1,77 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .risco-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .risco-item h2 {
+    color: #555;
+    margin-top: 0;
+  }
+  
+  .risco-item p {
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .acoes {
+    margin-top: 15px;
+    padding-left: 20px;
+  }
+  
+  .acoes h3 {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .acoes ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .acoes li {
+    margin-bottom: 5px;
+  }
+  
+  .status, .responsavel, .prazo {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #888;
+  }
+  
+  .status strong, .responsavel strong, .prazo strong {
+    color: #555;
+  }
+  
+  .pendente {
+    color: orange;
+    font-weight: bold;
+  }
+  
+  .em-andamento {
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .concluido {
+    color: green;
+    font-weight: bold;
+  }
