@@ -193,66 +193,90 @@
   </div>
   <script>
   const sideLinks = document.querySelectorAll(
-  ".sidebar .side-menu li a:not(.logout)"
-  );
+    ".sidebar .side-menu li a:not(.logout)"
+);
 
-  sideLinks.forEach((item) => {
-  const li = item.parentElement;
-  item.addEventListener("click", () => {
-  sideLinks.forEach((i) => {
-  i.parentElement.classList.remove("active");
-  });
-  li.classList.add("active");
-  });
-  });
+sideLinks.forEach((item) => {
+    const li = item.parentElement;
+    item.addEventListener("click", () => {
+        sideLinks.forEach((i) => {
+            i.parentElement.classList.remove("active");
+        });
+        li.classList.add("active");
+    });
+});
 
-  const menuBar = document.querySelector(".content nav .bx.bx-menu");
-  const sideBar = document.querySelector(".sidebar");
+const menuBar = document.querySelector(".content nav .bx.bx-menu");
+const sideBar = document.querySelector(".sidebar");
 
-  menuBar.addEventListener("click", () => {
-  sideBar.classList.toggle("close");
-  });
+menuBar.addEventListener("click", () => {
+    sideBar.classList.toggle("close");
+});
 
-  const searchBtn = document.querySelector(
-  ".content nav form .form-input button"
-  );
-  const searchBtnIcon = document.querySelector(
-  ".content nav form .form-input button .bx"
-  );
-  const searchForm = document.querySelector(".content nav form");
+const searchBtn = document.querySelector(
+    ".content nav form .form-input button"
+);
+const searchBtnIcon = document.querySelector(
+    ".content nav form .form-input button .bx"
+);
+const searchForm = document.querySelector(".content nav form");
 
-  searchBtn.addEventListener("click", function (e) {
-  if (window.innerWidth < 576) {
-  e.preventDefault;
-  searchForm.classList.toggle("show");
-  if (searchForm.classList.contains("show")) {
-  searchBtnIcon.classList.replace("bx-search", "bx-x");
-  } else {
-  searchBtnIcon.classList.replace("bx-x", "bx-search");
-  }
-  }
-  });
+searchBtn.addEventListener("click", function (e) {
+    if (window.innerWidth < 576) {
+        e.preventDefault;
+        searchForm.classList.toggle("show");
+        if (searchForm.classList.contains("show")) {
+            searchBtnIcon.classList.replace("bx-search", "bx-x");
+        } else {
+            searchBtnIcon.classList.replace("bx-x", "bx-search");
+        }
+    }
+});
 
-  window.addEventListener("resize", () => {
-  if (window.innerWidth < 768) {
-  sideBar.classList.add("close");
-  } else {
-  sideBar.classList.remove("close");
-  }
+window.addEventListener("resize", () => {
+    if (window.innerWidth < 768) {
+        sideBar.classList.add("close");
+    } else {
+        sideBar.classList.remove("close");
+    }
 
-  if (window.innerWidth > 576) {
-  searchBtnIcon.classList.replace("bx-x", "bx-search");
-  searchForm.classList.remove("show");
-  }
-  });
+    if (window.innerWidth > 576) {
+        searchBtnIcon.classList.replace("bx-x", "bx-search");
+        searchForm.classList.remove("show");
+    }
+});
 
-  const toggler = document.getElementById("theme-toggle");
+const toggler = document.getElementById("theme-toggle");
+const DARK_MODE_KEY = 'darkModeEnabled'; // Chave para armazenar no localStorage
 
-  toggler.addEventListener("change", function () {
-  this.checked
-  ? document.body.classList.add("dark")
-  : document.body.classList.remove("dark");
-  });
+// Função para aplicar o tema
+function applyTheme(isDarkMode) {
+    if (isDarkMode) {
+        document.body.classList.add("dark");
+        toggler.checked = true;
+    } else {
+        document.body.classList.remove("dark");
+        toggler.checked = false;
+    }
+}
+
+// Verifica se há alguma preferência salva no localStorage
+const storedDarkMode = localStorage.getItem(DARK_MODE_KEY);
+if (storedDarkMode === 'true') {
+    applyTheme(true);
+} else if (storedDarkMode === 'false') {
+    applyTheme(false);
+} else {
+    // Se não houver preferência, você pode definir um tema padrão aqui, se quiser
+    // Por exemplo: applyTheme(false); // Define o tema claro como padrão
+}
+
+toggler.addEventListener("change", function () {
+    const isDarkMode = this.checked;
+    applyTheme(isDarkMode);
+    // Salva a preferência do tema no localStorage
+    localStorage.setItem(DARK_MODE_KEY, isDarkMode);
+});
   </script>
   <script src="/js/detalhes.js"></script>
   <script src="/js/riscoscompa.js"></script>
