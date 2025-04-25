@@ -678,8 +678,29 @@ body {
   margin-bottom: 10px;
 }
 
+.actions-list {
+  margin-top: 10px;
+}
+
+.actions-list label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.actions-list input[type="checkbox"] {
+  margin-right: 5px;
+  vertical-align: middle; /* Alinha verticalmente a caixa de seleção com o texto */
+}
+
+.actions-list label span {
+  vertical-align: middle; /* Alinha verticalmente o texto com a caixa de seleção */
+}
+
 /* Estilos para o tema dark (se estiver usando) */
 body.dark .overlay-content {
   background-color: #333;
   color: #eee;
 }
+
+
+  

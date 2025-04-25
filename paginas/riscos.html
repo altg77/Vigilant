@@ -1,282 +1,375 @@
 <!DOCTYPE html>
-<html lang="en">
+ <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="..style2.css">
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+  rel="stylesheet"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="..style2.css">
+  <link rel="stylesheet" href="/style3.css">
+  <link rel="stylesheet" href="cadastro-risco.css">
 
-    <title>Vigilant BR | Gestor de riscos</title>
-    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
-    
+  <title>Vigilant BR | Gestor de riscos</title>
+  <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+
   </head>
   <body>
 
-    <div id="overlay" class="overlay">
-      <div id="overlay-content" class="overlay-content">
-        <div class="header">
-          <h3>Detalhes do Risco</h3>
-          <i class="bx bx-x overlay-close"></i>
-        </div>
-        <div id="risk-details">
-          </div>
-      </div>
-    </div>
-    
-    <div class="sidebar">
-      <a href="#" class="logo">
-        <i class="bx bx-shield-alt"></i>
-        <div class="logo-name"><span>Vigi</span>Lant</div>
-      </a>
-      <ul class="side-menu">
-        <li>
-          <a href="/index.html"><i class="bx bxs-dashboard"></i>Dashboard</a>
-        </li>
-        <li>
-          <a href="/paginas/equipamentos.html"><i class="bx bx-shield-alt"></i>Máquinas</a>
-        </li>
-        <li  class="active">
-          <a href="/paginas/riscos.html"><i class="bx bx-wrench"></i>Riscos</a>
-        </li>
-        <li>
-          <a href="/paginas/planodeacao.html"><i class="bx bx-task"></i>Planos de Ação</a>
-        </li>
-        <li>
-          <a href="/paginas/relatorios.html"><i class="bx bx-file"></i>Relatórios</a>
-        </li>
-        <li>
-          <a href="/paginas/Colaboradores.html"><i class="bx bx-group"></i>Colaboradores</a>
-        </li>
-        <li>
-          <a href="#"><i class="bx bx-cog"></i>Configurações</a>
-        </li>
-      </ul>
-      <ul class="side-menu">
-        <li>
-          <a href="#" class="logout">
-            <i class="bx bx-log-out-circle"></i>
-            Logout
-          </a>
-        </li>
-      </ul>
-    </div>
+  <div id="overlay" class="overlay">
+  <div id="overlay-content" class="overlay-content">
+  <div class="header">
+  <h3>Detalhes do Risco</h3>
+  <i class="bx bx-x overlay-close"></i>
+  </div>
+  <div id="risk-details">
+  </div>
+  </div>
+  </div>
+
+  <div id="cadastro-risco-overlay" class="overlay">
+  <div id="cadastro-risco-overlay-content" class="overlay-content">
+  <div class="header">
+  <h3>Cadastrar Novo Risco</h3>
+  <i class="bx bx-x cadastro-risco-overlay-close"></i>
+  </div>
+  <div id="cadastro-risco-form">
+  <form id="novoRiscoForm">
+  <div class="form-group">
+  <label for="risco-setor">Setor:</label>
+  <input type="text" id="risco-setor" name="risco-setor" required>
+  </div>
+  <div class="form-group">
+  <label for="risco-codigo">Código:</label>
+  <input type="text" id="risco-codigo" name="risco-codigo" required>
+  </div>
+  <div class="form-group">
+  <label for="risco-maquina">Máquina Associada:</label>
+  <input type="text" id="risco-maquina" name="risco-maquina" required>
+  </div>
+  <div class="form-group">
+  <label for="risco-descricao">Descrição do Risco:</label>
+  <textarea id="risco-descricao" name="risco-descricao" rows="3" required></textarea>
+  </div>
+  <div class="form-group">
+  <label for="risco-criticidade">Nível de Criticidade:</label>
+  <select id="risco-criticidade" name="risco-criticidade">
+  <option value="Alto">Alto</option>
+  <option value="Médio">Médio</option>
+  <option value="Baixo">Baixo</option>
+  </select>
+  </div>
+  <div class="form-group">
+  <label for="risco-data">Data de Identificação:</label>
+  <input type="date" id="risco-data" name="risco-data" required>
+  </div>
+  <div class="form-group">
+  <label for="risco-status">Status:</label>
+  <select id="risco-status" name="risco-status">
+  <option value="Em analise">Em analise</option>
+  <option value="Pendente">Pendente</option>
+  <option value="Concluído">Concluído</option>
+  </select>
+  </div>
+  <button type="submit" class="btn-cadastrar">Cadastrar Risco</button>
+  </form>
+  </div>
+  </div>
+  </div>
+
+  <div class="sidebar">
+  <a href="#" class="logo">
+  <i class="bx bx-shield-alt"></i>
+  <div class="logo-name"><span>Vigi</span>Lant</div>
+  </a>
+  <ul class="side-menu">
+  <li>
+  <a href="/index.html"><i class="bx bxs-dashboard"></i>Dashboard</a>
+  </li>
+  <li>
+  <a href="/paginas/equipamentos.html"><i class="bx bx-shield-alt"></i>Máquinas</a>
+  </li>
+  <li class="active">
+  <a href="/paginas/riscos.html"><i class="bx bx-wrench"></i>Riscos</a>
+  </li>
+  <li>
+  <a href="/paginas/planodeacao.html"><i class="bx bx-task"></i>Planos de Ação</a>
+  </li>
+  <li>
+  <a href="/paginas/relatorios.html"><i class="bx bx-file"></i>Relatórios</a>
+  </li>
+  <li>
+  <a href="/paginas/Colaboradores.html"><i class="bx bx-group"></i>Colaboradores</a>
+  </li>
+  <li>
+  <a href="#"><i class="bx bx-cog"></i>Configurações</a>
+  </li>
+  </ul>
+  <ul class="side-menu">
+  <li>
+  <a href="#" class="logout">
+  <i class="bx bx-log-out-circle"></i>
+  Logout
+  </a>
+  </li>
+  </ul>
+  </div>
 
 
-    <div class="content">
-      <nav>
-        <i class="bx bx-menu"></i>
-        <form action="#">
-          <div class="form-input">
-            <input type="search" placeholder="Search..." />
-            <button class="search-btn" type="submit">
-              <i class="bx bx-search"></i>
-            </button>
-          </div>
-        </form>
-        <input type="checkbox" id="theme-toggle" hidden />
-        <label for="theme-toggle" class="theme-toggle"></label>
-        <a href="#" class="notif">
-          <i class="bx bx-bell"></i>
-          <span class="count">12</span>
-        </a>
-        <a href="#" class="profile">
-          <img src="/assets/beb449b8a5b8dd50c113fc3c4063e4e1.jpg" />
-        </a>
-      </nav>
+  <div class="content">
+  <nav>
+  <i class="bx bx-menu"></i>
+  <form action="#">
+  <div class="form-input">
+  <input type="search" placeholder="Search..." />
+  <button class="search-btn" type="submit">
+  <i class="bx bx-search"></i>
+  </button>
+  </div>
+  </form>
+  <input type="checkbox" id="theme-toggle" hidden />
+  <label for="theme-toggle" class="theme-toggle"></label>
+  <a href="#" class="notif">
+  <i class="bx bx-bell"></i>
+  <span class="count">12</span>
+  </a>
+  <a href="#" class="profile">
+  <img src="/assets/beb449b8a5b8dd50c113fc3c4063e4e1.jpg" />
+  </a>
+  </nav>
 
-      <main>
-        <div class="header">
-          <div class="left">
-            <h1>Riscos</h1>
-            <ul class="breadcrumb">
-              <li><a href="#">Registro de riscos</a></li>
-            </ul>
-          </div>
-          <div class="tt">
-            <a href="#" class="report">
-              <span>Adicionar manualmente</span>
-            </a>
-            <a href="/paginas/subpaginas/analiserisco.html" class="warning">
-              <span>Analise IA de possiveis riscos</span>
-            </a>
-          </div>
-        </div>
+  <main>
+  <div class="header">
+  <div class="left">
+  <h1>Riscos</h1>
+  <ul class="breadcrumb">
+  <li><a href="#">Registro de riscos</a></li>
+  </ul>
+  </div>
+  <div class="tt">
+  <a href="#" class="report" id="openCadastroRiscoOverlay">
+  <span>Adicionar Risco</span>
+  </a>
+  <a href="/paginas/subpaginas/analiserisco.html" class="warning">
+  <span>Analise IA de possiveis riscos</span>
+  </a>
+  </div>
+  </div>
 
-        <div class="bottom-data">
-            <div class="orders">
-              <div class="header">
-                <i class="bx bx-filter"></i>
-                <i class="bx bx-search"></i>
-              </div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Setores</th>
-                    <th>Código</th>
-                    <th>Máquina Associada</th>
-                    <th>Descrição do risco</th>
-                    <th>Nivel de criticidade</th>
-                    <th>Data de indentificação</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 03</p>
-                    </td>
-                    <td>RIS-EST-002</td>
-                    <td>
-                        <p>FAB-EST-005</p>
-                    </td>
-                    <td>Quebra de ferram...</td>
-                    <td><span class="status completed">Alto</span></td>
-                    <td>2025-04-01</td>
-                    <td><span class="status pending">Em analise</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 21</p>
-                    </td>
-                    <td>RIS-PIN-003</td>
-                    <td>
-                        <p>FAB-PIN-012</p>
-                    </td>
-                    <td>Entupimento de bic...</td>
-                    <td><span class="status completed">Alto</span></td>
-                    <td>2025-04-10</td>
-                    <td><span class="status pending">Em analise</span></td>
+  <div class="bottom-data">
+  <div class="orders">
+  <div class="header">
+  <i class="bx bx-filter"></i>
+  <i class="bx bx-search"></i>
+  </div>
+  <table>
+  <thead>
+  <tr>
+  <th>Setores</th>
+  <th>Código</th>
+  <th>Máquina Associada</th>
+  <th>Descrição do risco</th>
+  <th>Nivel de criticidade</th>
+  <th>Data de indentificação</th>
+  <th>Status</th>
+  <th>Ações</th>
+  </tr>
+  </thead>
+  <tbody id="riscos-lista">
+  </tbody>
+  </table>
+  </div>
+  </div>
 
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 09</p>
-                    </td>
-                    <td>RIS-USI-004</td>
-                    <td>
-                        <p>FAB-USI-021</p>
-                    </td>
-                    <td>Descalibração do cent...</td>
-                    <td><span class="status pending">Médio</span></td>
-                    <td>2025-04-18</td>
-                    <td><span class="status pending">Em analise</span></td>
+  </main>
+  </div>
+  <script>
+  const sideLinks = document.querySelectorAll(
+  ".sidebar .side-menu li a:not(.logout)"
+  );
 
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 12</p>
-                    </td>
-                    <td>RIS-MON-005</td>
-                    <td>
-                        <p>FAB-MON-035</p>
-                    </td>
-                    <td>Desalinhamento do tran...</td>
-                    <td><span class="status pending">Baixo</span></td>
-                    <td>2025-04-22</td>
-                    <td><span class="status pending">Em analise</span></td>
+  sideLinks.forEach((item) => {
+  const li = item.parentElement;
+  item.addEventListener("click", () => {
+  sideLinks.forEach((i) => {
+  i.parentElement.classList.remove("active");
+  });
+  li.classList.add("active");
+  });
+  });
 
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 12</p>
-                    </td>
-                    <td>RIS-MON-006</td>
-                    <td>
-                        <p>FAB-MON-038</p>
-                    </td>
-                    <td>Falha no sen...</td>
-                    <td><span class="status pending">Médio</span></td>
-                    <td>2025-04-23</td>
-                    <td><span class="status pending">Em analise</span></td>
+  const menuBar = document.querySelector(".content nav .bx.bx-menu");
+  const sideBar = document.querySelector(".sidebar");
 
-                </tr>
+  menuBar.addEventListener("click", () => {
+  sideBar.classList.toggle("close");
+  });
 
-                </tbody>
-              </table>
-            </div>
-            </div>
+  const searchBtn = document.querySelector(
+  ".content nav form .form-input button"
+  );
+  const searchBtnIcon = document.querySelector(
+  ".content nav form .form-input button .bx"
+  );
+  const searchForm = document.querySelector(".content nav form");
 
-      </main>
-    </div>
-    <script>const sideLinks = document.querySelectorAll(
-        ".sidebar .side-menu li a:not(.logout)"
-      );
-      
-      sideLinks.forEach((item) => {
-        const li = item.parentElement;
-        item.addEventListener("click", () => {
-          sideLinks.forEach((i) => {
-            i.parentElement.classList.remove("active");
-          });
-          li.classList.add("active");
-        });
-      });
-      
-      const menuBar = document.querySelector(".content nav .bx.bx-menu");
-      const sideBar = document.querySelector(".sidebar");
-      
-      menuBar.addEventListener("click", () => {
-        sideBar.classList.toggle("close");
-      });
-      
-      const searchBtn = document.querySelector(
-        ".content nav form .form-input button"
-      );
-      const searchBtnIcon = document.querySelector(
-        ".content nav form .form-input button .bx"
-      );
-      const searchForm = document.querySelector(".content nav form");
-      
-      searchBtn.addEventListener("click", function (e) {
-        if (window.innerWidth < 576) {
-          e.preventDefault;
-          searchForm.classList.toggle("show");
-          if (searchForm.classList.contains("show")) {
-            searchBtnIcon.classList.replace("bx-search", "bx-x");
-          } else {
-            searchBtnIcon.classList.replace("bx-x", "bx-search");
-          }
-        }
-      });
-      
-      window.addEventListener("resize", () => {
-        if (window.innerWidth < 768) {
-          sideBar.classList.add("close");
-        } else {
-          sideBar.classList.remove("close");
-        }
-      
-        if (window.innerWidth > 576) {
-          searchBtnIcon.classList.replace("bx-x", "bx-search");
-          searchForm.classList.remove("show");
-        }
-      });
-      
-      const toggler = document.getElementById("theme-toggle");
-      
-      toggler.addEventListener("change", function () {
-        this.checked
-          ? document.body.classList.add("dark")
-          : document.body.classList.remove("dark");
-      });
-      </script>
-          <script src="/js/detalhes.js"></script>
+  searchBtn.addEventListener("click", function (e) {
+  if (window.innerWidth < 576) {
+  e.preventDefault;
+  searchForm.classList.toggle("show");
+  if (searchForm.classList.contains("show")) {
+  searchBtnIcon.classList.replace("bx-search", "bx-x");
+  } else {
+  searchBtnIcon.classList.replace("bx-x", "bx-search");
+  }
+  }
+  });
 
+  window.addEventListener("resize", () => {
+  if (window.innerWidth < 768) {
+  sideBar.classList.add("close");
+  } else {
+  sideBar.classList.remove("close");
+  }
+
+  if (window.innerWidth > 576) {
+  searchBtnIcon.classList.replace("bx-x", "bx-search");
+  searchForm.classList.remove("show");
+  }
+  });
+
+  const toggler = document.getElementById("theme-toggle");
+
+  toggler.addEventListener("change", function () {
+  this.checked
+  ? document.body.classList.add("dark")
+  : document.body.classList.remove("dark");
+  });
+
+  // Overlay de Cadastro de Risco
+  const openCadastroRiscoOverlayButton = document.getElementById("openCadastroRiscoOverlay");
+  const cadastroRiscoOverlay = document.getElementById("cadastro-risco-overlay");
+  const closeCadastroRiscoOverlayButton = document.querySelector(".cadastro-risco-overlay-close");
+  const novoRiscoForm = document.getElementById("novoRiscoForm");
+  const riscosLista = document.getElementById("riscos-lista");
+
+  const LOCAL_STORAGE_KEY_RISCOS = 'riscosVigilantBR';
+  let riscosCadastrados = [];
+
+  // Função para salvar os riscos no Local Storage
+  function salvarRiscos() {
+  localStorage.setItem(LOCAL_STORAGE_KEY_RISCOS, JSON.stringify(riscosCadastrados));
+  }
+
+  // Função para carregar os riscos do Local Storage
+  function carregarRiscos() {
+  const storedRiscos = localStorage.getItem(LOCAL_STORAGE_KEY_RISCOS);
+  if (storedRiscos) {
+  riscosCadastrados = JSON.parse(storedRiscos);
+  riscosCadastrados.forEach(adicionarRiscoNaTabela);
+  }
+  }
+
+  // Função para adicionar um risco à tabela
+  function adicionarRiscoNaTabela(risco) {
+  const newRow = riscosLista.insertRow();
+  const setorCell = newRow.insertCell();
+  const codigoCell = newRow.insertCell();
+  const maquinaCell = newRow.insertCell();
+  const descricaoCell = newRow.insertCell();
+  const criticidadeCell = newRow.insertCell();
+  const dataCell = newRow.insertCell();
+  const statusCell = newRow.insertCell();
+  const acoesCell = newRow.insertCell();
+
+  setorCell.innerHTML = `<img src="/assets/images (35).jpg" /><p>${risco.setor}</p>`;
+  codigoCell.textContent = risco.codigo;
+  maquinaCell.innerHTML = `<p>${risco.maquina}</p>`;
+  descricaoCell.textContent = risco.descricao;
+  criticidadeCell.innerHTML = `<span class="status ${risco.criticidade === 'Alto' ? 'completed' : risco.criticidade === 'Médio' ? 'pending' : 'critical'}">${risco.criticidade}</span>`;
+  dataCell.textContent = risco.data;
+  statusCell.innerHTML = `<span class="status ${risco.status === 'Concluído' ? 'completed' : risco.status === 'Em analise' ? 'pending' : 'critical'}">${risco.status}</span>`;
+
+  // Criar o botão de deletar para riscos
+  const deletarButton = document.createElement('button');
+  deletarButton.textContent = '...';
+  deletarButton.classList.add('btn-deletar');
+  deletarButton.addEventListener('click', () => {
+  confirmarDelecaoRisco(risco.codigo);
+  });
+  acoesCell.appendChild(deletarButton);
+  }
+
+  function confirmarDelecaoRisco(codigoParaDeletar) {
+  if (confirm(`Deseja realmente deletar o risco com código: ${codigoParaDeletar}?`)) {
+  deletarRisco(codigoParaDeletar);
+  }
+  }
+
+  function deletarRisco(codigoParaDeletar) {
+  riscosCadastrados = riscosCadastrados.filter(risco => risco.codigo !== codigoParaDeletar);
+  salvarRiscos();
+  riscosLista.innerHTML = '';
+  carregarRiscos();
+  }
+
+  // Carregar os riscos assim que a página for carregada
+  document.addEventListener('DOMContentLoaded', carregarRiscos);
+
+  openCadastroRiscoOverlayButton.addEventListener("click", () => {
+  cadastroRiscoOverlay.style.display = "flex";
+  });
+
+  closeCadastroRiscoOverlayButton.addEventListener("click", () => {
+  cadastroRiscoOverlay.style.display = "none";
+  novoRiscoForm.reset();
+  });
+
+  cadastroRiscoOverlay.addEventListener("click", (event) => {
+  if (event.target === cadastroRiscoOverlay) {
+  cadastroRiscoOverlay.style.display = "none";
+  novoRiscoForm.reset();
+  }
+  });
+
+  novoRiscoForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const riscoSetor = document.getElementById("risco-setor").value;
+  const riscoCodigo = document.getElementById("risco-codigo").value;
+  const riscoMaquina = document.getElementById("risco-maquina").value;
+  const riscoDescricao = document.getElementById("risco-descricao").value;
+  const riscoCriticidade = document.getElementById("risco-criticidade").value;
+  const riscoData = document.getElementById("risco-data").value;
+  const riscoStatus = document.getElementById("risco-status").value;
+
+  const novoRisco = {
+  setor: riscoSetor,
+  codigo: riscoCodigo,
+  maquina: riscoMaquina,
+  descricao: riscoDescricao,
+  criticidade: riscoCriticidade,
+  data: riscoData,
+  status: riscoStatus
+  };
+
+  riscosCadastrados.push(novoRisco);
+  adicionarRiscoNaTabela(novoRisco);
+  salvarRiscos();
+
+  cadastroRiscoOverlay.style.display = "none";
+  novoRiscoForm.reset();
+  });
+  </script>
+  <script src="/js/detalhes.js"></script>
 
   </body>
-</html>
+ </html>

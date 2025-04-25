@@ -3,21 +3,53 @@ document.addEventListener('DOMContentLoaded', function() {
   const overlayContent = document.getElementById('risk-details');
   const closeOverlayButton = document.querySelector('.overlay-close');
 
-  function handleRowClick(table, headers) {
+  function handleRowClick(table, headers, hiddenHeaders) {
     table.addEventListener('click', function(event) {
       const clickedRow = event.target.closest('tr');
       if (clickedRow) {
         let detailsHTML = '';
-        for (let i = 0; i < headers.length; i++) {
+        const visibleHeaders = headers; // Apenas os cabeçalhos visíveis
+
+        // Exibe os cabeçalhos e valores visíveis
+        for (let i = 0; i < visibleHeaders.length; i++) {
           const value = clickedRow.cells[i].textContent.trim();
-          detailsHTML += `<p><strong>${headers[i]}:</strong> ${value}</p>`;
+          detailsHTML += `<div class="detail-item"><strong>${visibleHeaders[i]}:</strong> ${value}</div>`;
+        }
+
+        if (hiddenHeaders && hiddenHeaders.length > 0) {
+          detailsHTML += '<hr>';
+          for (let i = 0; i < hiddenHeaders.length; i++) {
+            const hiddenIndex = visibleHeaders.length + i;
+            if (clickedRow.cells.length > hiddenIndex) {
+              const hiddenValue = clickedRow.cells[hiddenIndex].textContent.trim();
+              detailsHTML += `<div class="detail-item"><strong>${hiddenHeaders[i]}:</strong> ${hiddenValue}</div>`;
+
+              if (hiddenHeaders[i] === 'Ações a serem tomadas') {
+                const actions = hiddenValue.split('\n');
+                let actionsHTML = '<div class="actions-list">';
+                actions.forEach(action => {
+                  const trimmedAction = action.trim();
+                  if (trimmedAction) {
+                    const parts = trimmedAction.split(':');
+                    let actionText = trimmedAction;
+                    if (parts.length > 1) {
+                      actionText = parts.slice(1).join(':').trim();
+                    }
+                    actionsHTML += `<label><input type="checkbox"> <span>${actionText}</span></label>`;
+                  }
+                });
+                actionsHTML += '</div>';
+                detailsHTML += actionsHTML; // Adiciona a lista de ações abaixo do título "Ações a serem tomadas"
+              }
+            }
+          }
         }
         overlayContent.innerHTML = detailsHTML;
         overlay.style.display = 'flex';
       }
     });
   }
-
+  
   if (overlay && overlayContent && closeOverlayButton) {
     // Lógica para a página de Dashboard (Riscos)
     if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
@@ -46,14 +78,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    // Lógica para a página de Plano de Ação
+      // Lógica para a página de Plano de Ação
     if (window.location.pathname.includes('planodeacao.html')) {
       const planActionTable = document.querySelector('.bottom-data .orders table tbody');
       if (planActionTable) {
-        const planActionHeaders = ['Solução gerada', 'Código', 'Tempo da Solução', 'Risco', 'Status', 'Responsaveis', 'Prazo'];
-        handleRowClick(planActionTable, planActionHeaders);
+        const planActionHeaders = ['Solução gerada', 'Análise da IA', 'Solução Proposta pela IA', 'Ações a serem tomadas'];
+        const planActionHiddenHeaders = ['Código', 'Tempo da Solução', 'Risco', 'Status', 'Responsaveis', 'Prazo'];
+        handleRowClick(planActionTable, planActionHeaders, planActionHiddenHeaders);
       }
     }
+
 
     // Lógica para a página de Relatorios
     if (window.location.pathname.includes('relatorios.html')) {
