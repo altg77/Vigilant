@@ -197,6 +197,9 @@
 
         const LOCAL_STORAGE_KEY_RISCOS = 'riscosVigilantBR';
 const tabelaPlanosAcaoBody = document.querySelector("#orders");
+const overlay = document.getElementById('overlay');
+const riskDetailsContainer = document.getElementById('risk-details');
+const overlayCloseButton = document.querySelector('.overlay-close');
 
 let riscosCadastrados = [];
 
@@ -264,8 +267,6 @@ function exibirPlanosDeAcaoParaTodosRiscos() {
             const newRow = tabelaPlanosAcaoBody.insertRow();
 
             newRow.insertCell().innerHTML = `<p>${planoAcao.solucao}</p>`;
-            // Não inserimos análise, solução detalhada e ações como texto nas células visíveis
-
             newRow.insertCell().textContent = risco.codigo;
             newRow.insertCell().textContent = planoAcao.tempoSolucao;
             newRow.insertCell().textContent = risco.descricao;
@@ -273,23 +274,16 @@ function exibirPlanosDeAcaoParaTodosRiscos() {
             newRow.insertCell().textContent = planoAcao.responsaveis;
             newRow.insertCell().innerHTML = `<span class="status ${planoAcao.prazo === 'Imediato' ? 'critical' : planoAcao.prazo.includes('semana') || planoAcao.prazo.includes('dias') ? 'pending' : 'completed'}">${planoAcao.prazo}</span>`;
 
-            // Armazenar os detalhes como atributos data-* na linha
+            // Adicionar os atributos data-* na linha
             newRow.dataset.analise = planoAcao.analise;
             newRow.dataset.solucaoDetalhada = planoAcao.solucao;
-            newRow.dataset.acoes = JSON.stringify(planoAcao.acoes); // Armazenar array como JSON
-
-            // Adicionar um botão para exibir os detalhes (opcional, você pode usar outro gatilho)
-            const detalhesButtonCell = newRow.insertCell();
-            detalhesButton.textContent = 'Detalhes';
-            detalhesButton.addEventListener('click', () => {
-                mostrarDetalhesPlanoAcao(newRow.dataset); // Passa os dados da linha para a função em detalhes.js
-            });
-            detalhesButtonCell.appendChild(detalhesButton);
+            newRow.dataset.acoes = JSON.stringify(planoAcao.acoes);
         });
     } else {
         console.error("Corpo da tabela de planos de ação não encontrado!");
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOMContentLoaded disparado na página de plano de ação.");

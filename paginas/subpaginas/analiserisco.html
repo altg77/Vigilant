@@ -106,54 +106,31 @@
         </div>
 
         <div class="bottom-data">
-            <div class="orders">
-              <div class="header">
-                <i class="bx bx-filter"></i>
-                <i class="bx bx-search"></i>
-              </div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Setores</th>
-                    <th>Código</th>
-                    <th>Máquina Associada</th>
-                    <th>Taxa de risco</th>
-                    <th>Data de analise</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 03</p>
-                    </td>
-                    <td>RIS-EST-002</td>
-                    <td>
-                        <p>FAB-EST-005</p>
-                    </td>
-                    <td><span class="status completed">70%</span></td>
-                    <td>2025-04-01</td>
-                </tr>
+          <div class="orders">
+            <div class="header">
+              <i class="bx bx-filter"></i>
+              <i class="bx bx-search"></i>
+            </div>
+            <table>
+              <thead>
                 <tr>
-                    <td>
-                        <img src="/assets/images (35).jpg" />
-                        <p>Setor 21</p>
-                    </td>
-                    <td>RIS-PIN-003</td>
-                    <td>
-                        <p>FAB-PIN-012</p>
-                    </td>
-                    <td><span class="status completed">50%</span></td>
-                    <td>2025-04-10</td>
-
+                  <th>Setores</th>
+                  <th>Código</th>
+                  <th>Máquina Associada</th>
+                  <th>Taxa de risco</th>
+                  <th>Data de análise</th>
+                  <th>Possível Risco (IA)</th>
                 </tr>
+              </thead>
+              <tbody id="riscos-previstos-lista">
                 </tbody>
-              </table>
-            </div>
-            </div>
+            </table>
+          </div>
+        </div>
 
       </main>
     </div>
+    <script src="/js/riscoscompa.js"></script>
     <script>const sideLinks = document.querySelectorAll(
         ".sidebar .side-menu li a:not(.logout)"
       );
@@ -216,6 +193,7 @@
           : document.body.classList.remove("dark");
       });
       </script>
+        <script src="/js/analisederisco.js"></script>
       <script src="/js/detalhes.js"></script>
   </body>
 </html>
