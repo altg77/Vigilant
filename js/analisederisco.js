@@ -94,7 +94,12 @@ document.addEventListener('DOMContentLoaded', function() {
         dataCell.textContent = riscoPrevisto.data;
         possivelRiscoCell.textContent = riscoPrevisto.possivelRisco;
       });
-    } else if (riscosPrevistosLista) {
+
+      localStorage.setItem('previsoesDeRiscos', JSON.stringify(previsoesDeRiscos));
+
+    } 
+    
+    else if (riscosPrevistosLista) {
       riscosPrevistosLista.innerHTML = '<tr><td colspan="6">Nenhum risco cadastrado para análise.</td></tr>';
     }
   });

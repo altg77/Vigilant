@@ -384,9 +384,26 @@ toggler.addEventListener("change", function () {
             });
         }
       });
+
+      // Atualizar a contagem de análises de risco no Dashboard
+    document.addEventListener('DOMContentLoaded', function() {
+        const totalAnalisesElement = document.querySelector('.insights li:nth-child(3) .info h3');
+        const previsoesDeRiscos = JSON.parse(localStorage.getItem('previsoesDeRiscos')) || [];
+        const numeroDeAnalises = previsoesDeRiscos.length;
+
+        if (totalAnalisesElement) {
+            totalAnalisesElement.textContent = numeroDeAnalises;
+            totalAnalisesElement.dataset.link = "/paginas/subpaginas/analiserisco.html";
+            totalAnalisesElement.style.cursor = "pointer";
+            totalAnalisesElement.addEventListener('click', function() {
+                window.location.href = this.dataset.link;
+            });
+        }
+    });
     </script>
   
-        <script src="js/riscoscompa.js"></script>
+  <script src="js/analisederisco.js"></script>
+    <script src="js/riscoscompa.js"></script>
     <script src="/js/detalhes.js"></script>
     <script src="/js/linkredirecion.js"></script>
   </body>
