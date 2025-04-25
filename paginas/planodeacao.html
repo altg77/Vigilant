@@ -201,15 +201,12 @@ const tabelaPlanosAcaoBody = document.querySelector("#orders");
 let riscosCadastrados = [];
 
 function carregarRiscos() {
-  const storedRiscos = localStorage.getItem(LOCAL_STORAGE_KEY_RISCOS);
-  console.log("Dados de riscos carregados:", storedRiscos);
-  if (storedRiscos) {
-    riscosCadastrados = JSON.parse(storedRiscos);
-    exibirPlanosDeAcaoParaTodosRiscos(); // Chama a função para exibir os planos de ação para todos os riscos carregados
-    localStorage.setItem('totalPlanosAcao', riscosCadastrados.length); // Inicializa a contagem ao carregar
-  } else {
-    localStorage.setItem('totalPlanosAcao', 0); // Inicializa a contagem se não houver riscos/planos
-  }
+    const storedRiscos = localStorage.getItem(LOCAL_STORAGE_KEY_RISCOS);
+    console.log("Dados de riscos carregados:", storedRiscos);
+    if (storedRiscos) {
+        riscosCadastrados = JSON.parse(storedRiscos);
+        exibirPlanosDeAcaoParaTodosRiscos(); // Chama a função para exibir os planos de ação para todos os riscos carregados
+    }
 }
 
 function simularAnaliseRisco(risco) {
@@ -254,46 +251,44 @@ function simularAnaliseRisco(risco) {
 }
 
 function exibirPlanosDeAcaoParaTodosRiscos() {
-  console.log("Função exibirPlanosDeAcaoParaTodosRiscos() chamada.");
-  console.log("Corpo da tabela:", tabelaPlanosAcaoBody);
-  if (tabelaPlanosAcaoBody) {
-    tabelaPlanosAcaoBody.innerHTML = ''; // Limpar a tabela
-    console.log("Tabela de planos de ação limpa.");
+    console.log("Função exibirPlanosDeAcaoParaTodosRiscos() chamada.");
+    console.log("Corpo da tabela:", tabelaPlanosAcaoBody);
+    if (tabelaPlanosAcaoBody) {
+        tabelaPlanosAcaoBody.innerHTML = ''; // Limpar a tabela
+        console.log("Tabela de planos de ação limpa.");
 
-    riscosCadastrados.forEach(risco => {
-      console.log("Processando risco:", risco);
-      const planoAcao = simularAnaliseRisco(risco);
-      console.log("Plano de ação simulado:", planoAcao);
-      const newRow = tabelaPlanosAcaoBody.insertRow();
+        riscosCadastrados.forEach(risco => {
+            console.log("Processando risco:", risco);
+            const planoAcao = simularAnaliseRisco(risco);
+            console.log("Plano de ação simulado:", planoAcao);
+            const newRow = tabelaPlanosAcaoBody.insertRow();
 
-      newRow.insertCell().innerHTML = `<p>${planoAcao.solucao}</p>`;
-      // Não inserimos análise, solução detalhada e ações como texto nas células visíveis
+            newRow.insertCell().innerHTML = `<p>${planoAcao.solucao}</p>`;
+            // Não inserimos análise, solução detalhada e ações como texto nas células visíveis
 
-      newRow.insertCell().textContent = risco.codigo;
-      newRow.insertCell().textContent = planoAcao.tempoSolucao;
-      newRow.insertCell().textContent = risco.descricao;
-      newRow.insertCell().innerHTML = `<span class="status <span class="math-inline">\{planoAcao\.status \=\=\= 'Urgente' ? 'critical' \: planoAcao\.status \=\=\= 'Em análise' ? 'pending' \: 'completed'\}"\></span>{planoAcao.status}</span>`;
-      newRow.insertCell().textContent = planoAcao.responsaveis;
-      newRow.insertCell().innerHTML = `<span class="status <span class="math-inline">\{planoAcao\.prazo \=\=\= 'Imediato' ? 'critical' \: planoAcao\.prazo\.includes\('semana'\) \|\| planoAcao\.prazo\.includes\('dias'\) ? 'pending' \: 'completed'\}"\></span>{planoAcao.prazo}</span>`;
+            newRow.insertCell().textContent = risco.codigo;
+            newRow.insertCell().textContent = planoAcao.tempoSolucao;
+            newRow.insertCell().textContent = risco.descricao;
+            newRow.insertCell().innerHTML = `<span class="status ${planoAcao.status === 'Urgente' ? 'critical' : planoAcao.status === 'Em análise' ? 'pending' : 'completed'}">${planoAcao.status}</span>`;
+            newRow.insertCell().textContent = planoAcao.responsaveis;
+            newRow.insertCell().innerHTML = `<span class="status ${planoAcao.prazo === 'Imediato' ? 'critical' : planoAcao.prazo.includes('semana') || planoAcao.prazo.includes('dias') ? 'pending' : 'completed'}">${planoAcao.prazo}</span>`;
 
-      // Armazenar os detalhes como atributos data-* na linha
-      newRow.dataset.analise = planoAcao.analise;
-      newRow.dataset.solucaoDetalhada = planoAcao.solucao;
-      newRow.dataset.acoes = JSON.stringify(planoAcao.acoes); // Armazenar array como JSON
+            // Armazenar os detalhes como atributos data-* na linha
+            newRow.dataset.analise = planoAcao.analise;
+            newRow.dataset.solucaoDetalhada = planoAcao.solucao;
+            newRow.dataset.acoes = JSON.stringify(planoAcao.acoes); // Armazenar array como JSON
 
-      // Adicionar um botão para exibir os detalhes (opcional, você pode usar outro gatilho)
-      const detalhesButtonCell = newRow.insertCell();
-      const detalhesButton = document.createElement('button');
-      detalhesButton.textContent = 'Detalhes';
-      detalhesButton.addEventListener('click', () => {
-        mostrarDetalhesPlanoAcao(newRow.dataset); // Passa os dados da linha para a função em detalhes.js
-      });
-      detalhesButtonCell.appendChild(detalhesButton);
-    });
-    localStorage.setItem('totalPlanosAcao', riscosCadastrados.length); // Salva a contagem de planos de ação
-  } else {
-    console.error("Corpo da tabela de planos de ação não encontrado!");
-  }
+            // Adicionar um botão para exibir os detalhes (opcional, você pode usar outro gatilho)
+            const detalhesButtonCell = newRow.insertCell();
+            detalhesButton.textContent = 'Detalhes';
+            detalhesButton.addEventListener('click', () => {
+                mostrarDetalhesPlanoAcao(newRow.dataset); // Passa os dados da linha para a função em detalhes.js
+            });
+            detalhesButtonCell.appendChild(detalhesButton);
+        });
+    } else {
+        console.error("Corpo da tabela de planos de ação não encontrado!");
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
