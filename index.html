@@ -199,29 +199,28 @@
 
         <div class="bottom-data">
           <div class="orders">
-           <div class="header">
-            <i class="bx bx-receipt"></i>
-            <h3 style="cursor: pointer;" data-link="/paginas/riscos.html">Riscos Recentes</h3>
-            <i class="bx bx-filter"></i>
-            <i class="bx bx-search"></i>
-           </div>
-           <table>
-            <thead>
-             <tr>
-              <th>Setores</th>
-              <th>Código</th>
-              <th>Máquina Associada</th>
-              <th>Descrição do risco</th>
-              <th>Nivel de criticidade</th>
-              <th>Data de indentificação</th>
-              <th>Status</th>
-             </tr>
-            </thead>
-            <tbody id="tabela-riscos-recentes">
-             </tbody>
-           </table>
+          <div class="header">
+          <i class="bx bx-filter"></i>
+          <i class="bx bx-search"></i>
           </div>
-         </div>
+          <table>
+          <thead>
+          <tr>
+          <th>Setores</th>
+          <th>Código</th>
+          <th>Máquina Associada</th>
+          <th>Descrição do risco</th>
+          <th>Nivel de criticidade</th>
+          <th>Data de indentificação</th>
+          <th>Status</th>
+          <th>Ações</th>
+          </tr>
+          </thead>
+          <tbody id="riscos-lista">
+          </tbody>
+          </table>
+          </div>
+          </div>
 
           <div class="bottom-data">
             <div class="orders">
@@ -252,7 +251,6 @@
 
       </main>
     </div>
-    <script src="js/riscoscompa.js"></script>
     <script>const sideLinks = document.querySelectorAll(
       ".sidebar .side-menu li a:not(.logout)"
     );
@@ -358,6 +356,7 @@
     }
   });
     </script>
+        <script src="js/riscoscompa.js"></script>
     <script src="/js/detalhes.js"></script>
     <script src="/js/linkredirecion.js"></script>
   </body>

@@ -280,7 +280,7 @@ function exibirPlanosDeAcaoParaTodosRiscos() {
             newRow.dataset.acoes = JSON.stringify(planoAcao.acoes);
         });
     } else {
-        console.error("Corpo da tabela de planos de ação não encontrado!");
+        riscosPrevistosLista.innerHTML = '<tr><td colspan="6">Nenhum risco cadastrado para análise.</td></tr>';
     }
 }
 
