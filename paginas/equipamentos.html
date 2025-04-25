@@ -250,16 +250,19 @@
   // Função para salvar os equipamentos no Local Storage
   function salvarEquipamentos() {
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(equipamentosCadastrados));
-  }
+  localStorage.setItem('totalEquipamentos', equipamentosCadastrados.length); // Salva a contagem de equipamentos
+}
 
-  // Função para carregar os equipamentos do Local Storage
-  function carregarEquipamentos() {
+function carregarEquipamentos() {
   const storedEquipamentos = localStorage.getItem(LOCAL_STORAGE_KEY);
   if (storedEquipamentos) {
-  equipamentosCadastrados = JSON.parse(storedEquipamentos);
-  equipamentosCadastrados.forEach(adicionarEquipamentoNaTabela);
+    equipamentosCadastrados = JSON.parse(storedEquipamentos);
+    equipamentosCadastrados.forEach(adicionarEquipamentoNaTabela);
+    localStorage.setItem('totalEquipamentos', equipamentosCadastrados.length); // Salva a contagem ao carregar
+  } else {
+    localStorage.setItem('totalEquipamentos', 0); // Inicializa a contagem se não houver equipamentos salvos
   }
-  }
+}
 
   // Função para adicionar um equipamento à tabela
   function adicionarEquipamentoNaTabela(equipamento) {

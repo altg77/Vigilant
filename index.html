@@ -116,7 +116,7 @@
           <li>
             <i class="bx bx-x-circle"></i>
             <span class="info">
-              <h3 data-link="/paginas/subpaginas/analiserisco.html">99</h3>
+              <h3 data-link="/paginas/subpaginas/analiserisco.html">2</h3>
               <p>Analise de Riscos indentificada</p>
             </span>
           </li>
@@ -357,6 +357,50 @@
         : document.body.classList.remove("dark");
     });
     </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const totalRiscosElement = document.querySelector('.insights li:nth-child(1) .info h3');
+        const totalRiscos = localStorage.getItem('totalRiscos');
+    
+        if (totalRiscosElement && totalRiscos !== null) {
+          totalRiscosElement.textContent = totalRiscos;
+          totalRiscosElement.dataset.link = "/paginas/riscos.html"; // Mantém o link
+          totalRiscosElement.style.cursor = "pointer"; // Adiciona cursor de pointer para indicar que é clicável
+          totalRiscosElement.addEventListener('click', function() {
+            window.location.href = this.dataset.link;
+          });
+        }
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+    const totalEquipamentosElement = document.querySelector('.insights li:nth-child(2) .info h3');
+    const totalEquipamentos = localStorage.getItem('totalEquipamentos');
+
+    if (totalEquipamentosElement && totalEquipamentos !== null) {
+      totalEquipamentosElement.textContent = totalEquipamentos;
+      totalEquipamentosElement.dataset.link = "/paginas/equipamentos.html"; // Mantém o link
+      totalEquipamentosElement.style.cursor = "pointer"; // Adiciona cursor de pointer
+      totalEquipamentosElement.addEventListener('click', function() {
+        window.location.href = this.dataset.link;
+      });
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const totalPlanosAcaoElement = document.querySelector('.insights li:nth-child(4) .info h3');
+    const totalPlanosAcao = localStorage.getItem('totalPlanosAcao');
+
+    if (totalPlanosAcaoElement && totalPlanosAcao !== null) {
+      totalPlanosAcaoElement.textContent = totalPlanosAcao;
+      totalPlanosAcaoElement.dataset.link = "/paginas/planodeacao.html"; // Mantém o link
+      totalPlanosAcaoElement.style.cursor = "pointer"; // Adiciona cursor de pointer
+      totalPlanosAcaoElement.addEventListener('click', function() {
+        window.location.href = this.dataset.link;
+      });
+    }
+  });
+    </script>
+
     <script src="/js/detalhes.js"></script>
     <script src="/js/linkredirecion.js"></script>
   </body>

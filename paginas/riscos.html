@@ -156,7 +156,7 @@
   </div>
   <div class="tt">
   <a href="#" class="report" id="openCadastroRiscoOverlay">
-  <span>Adicionar Risco</span>
+  <span>Adicionar Risco Manualmente</span>
   </a>
   <a href="/paginas/subpaginas/analiserisco.html" class="warning">
   <span>Analise IA de possiveis riscos</span>
@@ -255,31 +255,34 @@
   });
 
   // Overlay de Cadastro de Risco
-  const openCadastroRiscoOverlayButton = document.getElementById("openCadastroRiscoOverlay");
-  const cadastroRiscoOverlay = document.getElementById("cadastro-risco-overlay");
-  const closeCadastroRiscoOverlayButton = document.querySelector(".cadastro-risco-overlay-close");
-  const novoRiscoForm = document.getElementById("novoRiscoForm");
-  const riscosLista = document.getElementById("riscos-lista");
+ const openCadastroRiscoOverlayButton = document.getElementById("openCadastroRiscoOverlay");
+ const cadastroRiscoOverlay = document.getElementById("cadastro-risco-overlay");
+ const closeCadastroRiscoOverlayButton = document.querySelector(".cadastro-risco-overlay-close");
+ const novoRiscoForm = document.getElementById("novoRiscoForm");
+ const riscosLista = document.getElementById("riscos-lista");
 
-  const LOCAL_STORAGE_KEY_RISCOS = 'riscosVigilantBR';
-  let riscosCadastrados = [];
+ const LOCAL_STORAGE_KEY_RISCOS = 'riscosVigilantBR';
+ let riscosCadastrados = [];
 
-  // Função para salvar os riscos no Local Storage
-  function salvarRiscos() {
+ // Função para salvar os riscos no Local Storage
+ function salvarRiscos() {
   localStorage.setItem(LOCAL_STORAGE_KEY_RISCOS, JSON.stringify(riscosCadastrados));
-  }
+  localStorage.setItem('totalRiscos', riscosCadastrados.length); // Salva a contagem
+ }
 
-  // Função para carregar os riscos do Local Storage
-  function carregarRiscos() {
+ function carregarRiscos() {
   const storedRiscos = localStorage.getItem(LOCAL_STORAGE_KEY_RISCOS);
   if (storedRiscos) {
-  riscosCadastrados = JSON.parse(storedRiscos);
-  riscosCadastrados.forEach(adicionarRiscoNaTabela);
+    riscosCadastrados = JSON.parse(storedRiscos);
+    riscosCadastrados.forEach(adicionarRiscoNaTabela);
+    localStorage.setItem('totalRiscos', riscosCadastrados.length); // Garante que a contagem seja salva ao carregar
+  } else {
+    localStorage.setItem('totalRiscos', 0); // Inicializa a contagem se não houver riscos salvos
   }
-  }
+}
 
-  // Função para adicionar um risco à tabela
-  function adicionarRiscoNaTabela(risco) {
+ // Função para adicionar um risco à tabela
+ function adicionarRiscoNaTabela(risco) {
   const newRow = riscosLista.insertRow();
   const setorCell = newRow.insertCell();
   const codigoCell = newRow.insertCell();
@@ -303,44 +306,44 @@
   deletarButton.textContent = '...';
   deletarButton.classList.add('btn-deletar');
   deletarButton.addEventListener('click', () => {
-  confirmarDelecaoRisco(risco.codigo);
+   confirmarDelecaoRisco(risco.codigo);
   });
   acoesCell.appendChild(deletarButton);
-  }
+ }
 
-  function confirmarDelecaoRisco(codigoParaDeletar) {
+ function confirmarDelecaoRisco(codigoParaDeletar) {
   if (confirm(`Deseja realmente deletar o risco com código: ${codigoParaDeletar}?`)) {
-  deletarRisco(codigoParaDeletar);
+   deletarRisco(codigoParaDeletar);
   }
-  }
+ }
 
-  function deletarRisco(codigoParaDeletar) {
+ function deletarRisco(codigoParaDeletar) {
   riscosCadastrados = riscosCadastrados.filter(risco => risco.codigo !== codigoParaDeletar);
   salvarRiscos();
   riscosLista.innerHTML = '';
   carregarRiscos();
-  }
+ }
 
-  // Carregar os riscos assim que a página for carregada
-  document.addEventListener('DOMContentLoaded', carregarRiscos);
+ // Carregar os riscos assim que a página for carregada
+ document.addEventListener('DOMContentLoaded', carregarRiscos);
 
-  openCadastroRiscoOverlayButton.addEventListener("click", () => {
+ openCadastroRiscoOverlayButton.addEventListener("click", () => {
   cadastroRiscoOverlay.style.display = "flex";
-  });
+ });
 
-  closeCadastroRiscoOverlayButton.addEventListener("click", () => {
+ closeCadastroRiscoOverlayButton.addEventListener("click", () => {
   cadastroRiscoOverlay.style.display = "none";
   novoRiscoForm.reset();
-  });
+ });
 
-  cadastroRiscoOverlay.addEventListener("click", (event) => {
+ cadastroRiscoOverlay.addEventListener("click", (event) => {
   if (event.target === cadastroRiscoOverlay) {
-  cadastroRiscoOverlay.style.display = "none";
-  novoRiscoForm.reset();
+   cadastroRiscoOverlay.style.display = "none";
+   novoRiscoForm.reset();
   }
-  });
+ });
 
-  novoRiscoForm.addEventListener("submit", function(event) {
+ novoRiscoForm.addEventListener("submit", function(event) {
   event.preventDefault();
 
   const riscoSetor = document.getElementById("risco-setor").value;
@@ -352,13 +355,13 @@
   const riscoStatus = document.getElementById("risco-status").value;
 
   const novoRisco = {
-  setor: riscoSetor,
-  codigo: riscoCodigo,
-  maquina: riscoMaquina,
-  descricao: riscoDescricao,
-  criticidade: riscoCriticidade,
-  data: riscoData,
-  status: riscoStatus
+   setor: riscoSetor,
+   codigo: riscoCodigo,
+   maquina: riscoMaquina,
+   descricao: riscoDescricao,
+   criticidade: riscoCriticidade,
+   data: riscoData,
+   status: riscoStatus
   };
 
   riscosCadastrados.push(novoRisco);
@@ -367,7 +370,7 @@
 
   cadastroRiscoOverlay.style.display = "none";
   novoRiscoForm.reset();
-  });
+ });
   </script>
   <script src="/js/detalhes.js"></script>
 

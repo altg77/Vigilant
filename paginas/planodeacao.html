@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,233 +18,297 @@
 
     <title>Vigilant BR | Gestor de riscos</title>
     <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
-    
-  </head>
-  <body>
+
+</head>
+<body>
 
     <div id="overlay" class="overlay">
-      <div id="overlay-content" class="overlay-content">
-        <div class="header">
-          <h3>Detalhes do Plano de ação</h3>
-          <i class="bx bx-x overlay-close"></i>
+        <div id="overlay-content" class="overlay-content">
+            <div class="header">
+                <h3>Detalhes do Plano de ação</h3>
+                <i class="bx bx-x overlay-close"></i>
+            </div>
+            <div id="risk-details">
+            </div>
         </div>
-        <div id="risk-details">
-          </div>
-      </div>
     </div>
-   
+
     <div class="sidebar">
-      <a href="#" class="logo">
-        <i class="bx bx-shield-alt"></i>
-        <div class="logo-name"><span>Vigi</span>Lant</div>
-      </a>
-      <ul class="side-menu">
-        <li>
-          <a href="/index.html"><i class="bx bxs-dashboard"></i>Dashboard</a>
-        </li>
-        <li>
-          <a href="/paginas/equipamentos.html"><i class="bx bx-shield-alt"></i>Máquinas</a>
-        </li>
-        <li>
-          <a href="/paginas/riscos.html"><i class="bx bx-wrench"></i>Riscos</a>
-        </li>
-        <li class="active">
-          <a href="/paginas/planodeacao.html"><i class="bx bx-task"></i>Planos de Ação</a>
-        </li>
-        <li>
-          <a href="/paginas/relatorios.html"><i class="bx bx-file"></i>Relatórios</a>
-        </li>
-        <li>
-          <a href="/paginas/Colaboradores.html"><i class="bx bx-group"></i>Colaboradores</a>
-        </li>
-        <li>
-          <a href="#"><i class="bx bx-cog"></i>Configurações</a>
-        </li>
-      </ul>
-      <ul class="side-menu">
-        <li>
-          <a href="#" class="logout">
-            <i class="bx bx-log-out-circle"></i>
-            Logout
-          </a>
-        </li>
-      </ul>
+        <a href="#" class="logo">
+            <i class="bx bx-shield-alt"></i>
+            <div class="logo-name"><span>Vigi</span>Lant</div>
+        </a>
+        <ul class="side-menu">
+            <li>
+                <a href="/index.html"><i class="bx bxs-dashboard"></i>Dashboard</a>
+            </li>
+            <li>
+                <a href="/paginas/equipamentos.html"><i class="bx bx-shield-alt"></i>Máquinas</a>
+            </li>
+            <li>
+                <a href="/paginas/riscos.html"><i class="bx bx-wrench"></i>Riscos</a>
+            </li>
+            <li class="active">
+                <a href="/paginas/planodeacao.html"><i class="bx bx-task"></i>Planos de Ação</a>
+            </li>
+            <li>
+                <a href="/paginas/relatorios.html"><i class="bx bx-file"></i>Relatórios</a>
+            </li>
+            <li>
+                <a href="/paginas/Colaboradores.html"><i class="bx bx-group"></i>Colaboradores</a>
+            </li>
+            <li>
+                <a href="#"><i class="bx bx-cog"></i>Configurações</a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class="bx bx-log-out-circle"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
     </div>
 
     <div class="content">
-      <nav>
-        <i class="bx bx-menu"></i>
-        <form action="#">
-          <div class="form-input">
-            <input type="search" placeholder="Search..." />
-            <button class="search-btn" type="submit">
-              <i class="bx bx-search"></i>
-            </button>
-          </div>
-        </form>
-        <input type="checkbox" id="theme-toggle" hidden />
-        <label for="theme-toggle" class="theme-toggle"></label>
-        <a href="#" class="notif">
-          <i class="bx bx-bell"></i>
-          <span class="count">12</span>
-        </a>
-        <a href="#" class="profile">
-          <img src="/assets/beb449b8a5b8dd50c113fc3c4063e4e1.jpg" />
-        </a>
-      </nav>
+        <nav>
+            <i class="bx bx-menu"></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search..." />
+                    <button class="search-btn" type="submit">
+                        <i class="bx bx-search"></i>
+                    </button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden />
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+                <i class="bx bx-bell"></i>
+                <span class="count">12</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="/assets/beb449b8a5b8dd50c113fc3c4063e4e1.jpg" />
+            </a>
+        </nav>
 
-      <main>
-        <div class="header">
-          <div class="left">
-            <h1>Plano de Ação</h1>
-            <ul class="breadcrumb">
-              <li><a href="#">Solução para os riscos apresentados</a></li>
-            </ul>
-          </div>
-  
-        </div>
-        <div class="bottom-data">
-            <div class="orders">
-              <div class="header">
-                <i class="bx bx-filter"></i>
-                <i class="bx bx-search"></i>
-              </div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Solução gerada</th>
-                    <th style="display: none;">Análise da IA</th>
-                    <th style="display: none;">Solução Proposta pela IA</th>
-                    <th style="display: none;">Ações a serem tomadas</th>
-                    <th>Código</th>
-                    <th>Tempo da Solução</th>
-                    <th>Risco</th>
-                    <th>Status</th>
-                    <th>Responsaveis</th>
-                    <th>Prazo</th>
-                  </tr>
-                </thead>
-                <tbody>
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Plano de Ação</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">Solução para os riscos apresentados</a></li>
+                    </ul>
+                </div>
 
-                  <tr>
-                    <td>
-                      <p>Parada imediata da máquina para inspeção</p>
-                    </td>
-
-                    <td style="display: none;">Vulnerabilidade detectada devido à falta de manutenção preventiva regular.</td>
-                    <td style="display: none;">Implementar um cronograma de manutenção preventiva e inspeções diárias.</td>
-                    <td style="display: none;">1: Desligar a máquina imediatamente.<br>2: Acionar a manutenção para inspeção.<br>3: Verificar o nível de óleo.<br>4: Realizar o balanceamento do eixo, se necessário.<br>5: Documentar as descobertas.</td>
-                    
-                    <td>FW-2025-01</td>
-                    <td>12 min</td>
-                    <td>RIS-EST-002</td>
-                    <td><span class="status completed">Em análise</span></td>
-                    <td>Analista</td>
-                    <td><span class="status completed">Imediato</span></td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                        <p>Ajuste dos parâmetros de corte</p>
-                    </td>
-                    <td style="display: none;">Vulnerabilidade detectada devido à falta de manutenção preventiva regular.</td>
-                    <td style="display: none;">Implementar um cronograma de manutenção preventiva e inspeções diárias.</td>
-                    <td style="display: none;">Desligar a máquina imediatamente.<br>2: Acionar a manutenção para inspeção.<br>3: Verificar o nível de óleo.<br>4: Realizar o balanceamento do eixo, se necessário.<br>5: Documentar as descobertas.</td> 
-                    
-                    <td>AJUSTE-CORTE-01</td>
-                    <td>10 min</td>
-                    <td>RIS-PIN-003</td>
-                    <td><span class="status completed">Concluído</span></td>
-                    <td>Analista</td>
-                    <td><span class="status completed">Aguardando</span></td>
-              
-                  </tr>
-
-                <tr>
-                  <td>
-                      <p>manutenção para avaliação detalhada</p>
-                  </td>
-
-                  <td style="display: none;">Vulnerabilidade detectada devido à falta de manutenção preventiva regular.</td>
-                  <td style="display: none;">Implementar um cronograma de manutenção preventiva e inspeções diárias.</td>
-                  <td style="display: none;">1: Desligar a máquina imediatamente.<br>2: Acionar a manutenção para inspeção.<br>3: Verificar o nível de óleo.<br>4: Realizar o balanceamento do eixo, se necessário.<br>5: Documentar as descobertas.</td>
-
-                  <td>CHAMADO-MANUT-01</td>
-                  <td>5 min</td>
-                  <td>RIS-PIN-005</td>
-                  <td><span class="status in-progress">Aguardando</span></td>
-                  <td>Operador</td>
-                  <td><span class="status completed">Aguardando</span></td>
-                 
-                </tr>
-              </table>
             </div>
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class="bx bx-filter"></i>
+                        <i class="bx bx-search"></i>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Solução gerada</th>
+                                <th style="display: none;">Análise da IA</th>
+                                <th style="display: none;">Solução Proposta pela IA</th>
+                                <th style="display: none;">Ações a serem tomadas</th>
+                                <th>Código</th>
+                                <th>Tempo da Solução</th>
+                                <th>Risco</th>
+                                <th>Status</th>
+                                <th>Responsaveis</th>
+                                <th>Prazo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders">
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-      </main>
+        </main>
     </div>
-    <script>const sideLinks = document.querySelectorAll(
-        ".sidebar .side-menu li a:not(.logout)"
-      );
-      
-      sideLinks.forEach((item) => {
-        const li = item.parentElement;
-        item.addEventListener("click", () => {
-          sideLinks.forEach((i) => {
-            i.parentElement.classList.remove("active");
-          });
-          li.classList.add("active");
+    <script>
+        const sideLinks = document.querySelectorAll(
+            ".sidebar .side-menu li a:not(.logout)"
+        );
+
+        sideLinks.forEach((item) => {
+            const li = item.parentElement;
+            item.addEventListener("click", () => {
+                sideLinks.forEach((i) => {
+                    i.parentElement.classList.remove("active");
+                });
+                li.classList.add("active");
+            });
         });
-      });
-      
-      const menuBar = document.querySelector(".content nav .bx.bx-menu");
-      const sideBar = document.querySelector(".sidebar");
-      
-      menuBar.addEventListener("click", () => {
-        sideBar.classList.toggle("close");
-      });
-      
-      const searchBtn = document.querySelector(
-        ".content nav form .form-input button"
-      );
-      const searchBtnIcon = document.querySelector(
-        ".content nav form .form-input button .bx"
-      );
-      const searchForm = document.querySelector(".content nav form");
-      
-      searchBtn.addEventListener("click", function (e) {
-        if (window.innerWidth < 576) {
-          e.preventDefault;
-          searchForm.classList.toggle("show");
-          if (searchForm.classList.contains("show")) {
-            searchBtnIcon.classList.replace("bx-search", "bx-x");
-          } else {
-            searchBtnIcon.classList.replace("bx-x", "bx-search");
-          }
+
+        const menuBar = document.querySelector(".content nav .bx.bx-menu");
+        const sideBar = document.querySelector(".sidebar");
+
+        menuBar.addEventListener("click", () => {
+            sideBar.classList.toggle("close");
+        });
+
+        const searchBtn = document.querySelector(
+            ".content nav form .form-input button"
+        );
+        const searchBtnIcon = document.querySelector(
+            ".content nav form .form-input button .bx"
+        );
+        const searchForm = document.querySelector(".content nav form");
+
+        searchBtn.addEventListener("click", function (e) {
+            if (window.innerWidth < 576) {
+                e.preventDefault;
+                searchForm.classList.toggle("show");
+                if (searchForm.classList.contains("show")) {
+                    searchBtnIcon.classList.replace("bx-search", "bx-x");
+                } else {
+                    searchBtnIcon.classList.replace("bx-x", "bx-search");
+                }
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth < 768) {
+                sideBar.classList.add("close");
+            } else {
+                sideBar.classList.remove("close");
+            }
+
+            if (window.innerWidth > 576) {
+                searchBtnIcon.classList.replace("bx-x", "bx-search");
+                searchForm.classList.remove("show");
+            }
+        });
+
+        const toggler = document.getElementById("theme-toggle");
+
+        toggler.addEventListener("change", function () {
+            this.checked
+                ? document.body.classList.add("dark")
+                : document.body.classList.remove("dark");
+        });
+
+        const LOCAL_STORAGE_KEY_RISCOS = 'riscosVigilantBR';
+const tabelaPlanosAcaoBody = document.querySelector("#orders");
+
+let riscosCadastrados = [];
+
+function carregarRiscos() {
+  const storedRiscos = localStorage.getItem(LOCAL_STORAGE_KEY_RISCOS);
+  console.log("Dados de riscos carregados:", storedRiscos);
+  if (storedRiscos) {
+    riscosCadastrados = JSON.parse(storedRiscos);
+    exibirPlanosDeAcaoParaTodosRiscos(); // Chama a função para exibir os planos de ação para todos os riscos carregados
+    localStorage.setItem('totalPlanosAcao', riscosCadastrados.length); // Inicializa a contagem ao carregar
+  } else {
+    localStorage.setItem('totalPlanosAcao', 0); // Inicializa a contagem se não houver riscos/planos
+  }
+}
+
+function simularAnaliseRisco(risco) {
+    // Simulação básica de análise e geração de plano de ação
+    let analise = "";
+    let solucao = "";
+    let acoes = [];
+    let tempoSolucao = "Indefinido";
+    let responsaveis = "A definir";
+    let prazo = "A definir";
+    let statusPlano = "Pendente";
+
+    if (risco) {
+        if (risco.criticidade === 'Alto') {
+            analise = `Risco alto detectado em ${risco.setor}, máquina ${risco.maquina}, devido a ${risco.descricao}.`;
+            solucao = "Parada imediata e inspeção detalhada.";
+            acoes = ["Desligar máquina", "Isolar área", "Chamar manutenção"];
+            tempoSolucao = "Imediato";
+            responsaveis = "Equipe de Operação e Manutenção";
+            prazo = "24 horas";
+            statusPlano = "Urgente";
+        } else if (risco.criticidade === 'Médio') {
+            analise = `Risco médio identificado em ${risco.setor}, máquina ${risco.maquina}, com a seguinte descrição: ${risco.descricao}.`;
+            solucao = "Avaliação técnica e possível intervenção.";
+            acoes = ["Agendar inspeção", "Verificar procedimentos", "Comunicar supervisão"];
+            tempoSolucao = "Em 48 horas";
+            responsaveis = "Técnico de Segurança e Manutenção";
+            prazo = "1 semana";
+            statusPlano = "Em análise";
+        } else { // Criticidade Baixa
+            analise = `Risco baixo reportado em ${risco.setor}, máquina ${risco.maquina}, detalhe: ${risco.descricao}.`;
+            solucao = "Monitoramento e revisão em próxima manutenção.";
+            acoes = ["Incluir em checklist", "Revisar em próxima parada", "Documentar"];
+            tempoSolucao = "Próxima manutenção";
+            responsaveis = "Operador e Supervisor";
+            prazo = "1 mês";
+            statusPlano = "Planejado";
         }
+    }
+
+    return { analise, solucao, acoes, tempoSolucao, responsaveis, prazo, status: statusPlano };
+}
+
+function exibirPlanosDeAcaoParaTodosRiscos() {
+  console.log("Função exibirPlanosDeAcaoParaTodosRiscos() chamada.");
+  console.log("Corpo da tabela:", tabelaPlanosAcaoBody);
+  if (tabelaPlanosAcaoBody) {
+    tabelaPlanosAcaoBody.innerHTML = ''; // Limpar a tabela
+    console.log("Tabela de planos de ação limpa.");
+
+    riscosCadastrados.forEach(risco => {
+      console.log("Processando risco:", risco);
+      const planoAcao = simularAnaliseRisco(risco);
+      console.log("Plano de ação simulado:", planoAcao);
+      const newRow = tabelaPlanosAcaoBody.insertRow();
+
+      newRow.insertCell().innerHTML = `<p>${planoAcao.solucao}</p>`;
+      // Não inserimos análise, solução detalhada e ações como texto nas células visíveis
+
+      newRow.insertCell().textContent = risco.codigo;
+      newRow.insertCell().textContent = planoAcao.tempoSolucao;
+      newRow.insertCell().textContent = risco.descricao;
+      newRow.insertCell().innerHTML = `<span class="status <span class="math-inline">\{planoAcao\.status \=\=\= 'Urgente' ? 'critical' \: planoAcao\.status \=\=\= 'Em análise' ? 'pending' \: 'completed'\}"\></span>{planoAcao.status}</span>`;
+      newRow.insertCell().textContent = planoAcao.responsaveis;
+      newRow.insertCell().innerHTML = `<span class="status <span class="math-inline">\{planoAcao\.prazo \=\=\= 'Imediato' ? 'critical' \: planoAcao\.prazo\.includes\('semana'\) \|\| planoAcao\.prazo\.includes\('dias'\) ? 'pending' \: 'completed'\}"\></span>{planoAcao.prazo}</span>`;
+
+      // Armazenar os detalhes como atributos data-* na linha
+      newRow.dataset.analise = planoAcao.analise;
+      newRow.dataset.solucaoDetalhada = planoAcao.solucao;
+      newRow.dataset.acoes = JSON.stringify(planoAcao.acoes); // Armazenar array como JSON
+
+      // Adicionar um botão para exibir os detalhes (opcional, você pode usar outro gatilho)
+      const detalhesButtonCell = newRow.insertCell();
+      const detalhesButton = document.createElement('button');
+      detalhesButton.textContent = 'Detalhes';
+      detalhesButton.addEventListener('click', () => {
+        mostrarDetalhesPlanoAcao(newRow.dataset); // Passa os dados da linha para a função em detalhes.js
       });
-      
-      window.addEventListener("resize", () => {
-        if (window.innerWidth < 768) {
-          sideBar.classList.add("close");
-        } else {
-          sideBar.classList.remove("close");
-        }
-      
-        if (window.innerWidth > 576) {
-          searchBtnIcon.classList.replace("bx-x", "bx-search");
-          searchForm.classList.remove("show");
-        }
-      });
-      
-      const toggler = document.getElementById("theme-toggle");
-      
-      toggler.addEventListener("change", function () {
-        this.checked
-          ? document.body.classList.add("dark")
-          : document.body.classList.remove("dark");
-      });
-      </script>
-                <script src="/js/detalhes.js"></script>
-  </body>
+      detalhesButtonCell.appendChild(detalhesButton);
+    });
+    localStorage.setItem('totalPlanosAcao', riscosCadastrados.length); // Salva a contagem de planos de ação
+  } else {
+    console.error("Corpo da tabela de planos de ação não encontrado!");
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOMContentLoaded disparado na página de plano de ação.");
+    carregarRiscos(); // Esta linha garante que os riscos e, consequentemente, os planos de ação sejam carregados assim que a página estiver pronta (DOMContentLoaded)
+});
+
+// Esta função 'mostrarDetalhesPlanoAcao' precisa estar definida no seu arquivo 'detalhes.js'
+// e será responsável por pegar os dados e exibir no overlay.
+function mostrarDetalhesPlanoAcao(data) {
+    console.log("Dados para detalhes:", data);
+    // A lógica para exibir os detalhes no overlay estará em detalhes.js
+}
+    </script>
+    <script src="/js/detalhes.js"></script>
+
+</body>
 </html>
